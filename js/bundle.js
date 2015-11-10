@@ -69,7 +69,6 @@
     var content = el.text();
 
     var post = posts.filter(function (p) {
-      console.log(title + ' vs ' + p.name + ' matches? ' + (p.name === title));
       return p.name === title;
     })[0] || null;
 
