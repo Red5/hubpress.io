@@ -11,6 +11,11 @@
 /* --------------------------------------------------------	*/
 /*-----------------Base -----------------------------------     */
 /* --------------------------------------------------------	*/
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body{ 
     font-family: 'Open Sans', sans-serif !important;
     background: #fff;
@@ -76,6 +81,11 @@ p{
     background: #fefac7; /* Firefox */
     color: #555555;
     outline: none;
+}
+
+#wrapper {
+    position: relative;
+    min-height: 100%;
 }
 /*============================================================*/
 /*========= margin padding for giving spaces in rows =========*/
@@ -572,8 +582,6 @@ h3.heading-progress span{
 #footer-defoult{
     background: #363839;
     color:#8C8989;
-}
-.footer-default--affix-bottom {
     position: absolute;
     bottom: 0;
     right: 0;

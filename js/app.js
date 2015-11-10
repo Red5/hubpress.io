@@ -49,7 +49,9 @@ $(document).ready(function () {
     });
   wow.init();
 
-  /* Custom */
+  /*==============
+  Custom
+  ==============*/
 
   window.requestAnimationFrame = (function(){
     return  window.requestAnimationFrame       ||
@@ -60,23 +62,21 @@ $(document).ready(function () {
             };
   })();
 
-  function affixFooterToBottomIfNecessary () {
-    var totalHeight = window.innerHeight;
-    var footer = $('#footer-defoult');
-    var currentScroll = window.scrollY || 0;
-    var footerTop = footer.offset().top || 0;
-    var footerHeight = footer.height();
-    var clzz = 'footer-default--affix-bottom';
-
-    if (footerTop + footerHeight < totalHeight) {
-      footer.addClass(clzz);
-      // footer.css('bottom', Math.min(0, -currentScroll));
-    } else if (footer.hasClass(clzz)) {
-      footer.removeClass(clzz);
+  // Fix the padding for the content so that the footer is always at the bottom
+  requestAnimationFrame(function fixFooterPadding () {
+    function getPadding ($el, dir) {
+      if (!$el || !dir) return 0;
+      return +($el.css('padding-'+dir).replace(/px/, ''));
     }
 
-    requestAnimationFrame(affixFooterToBottomIfNecessary);
-  }
+    var footer = $('#footer-defoult');
+    var content = $('#latest-news');
+    var contentPaddingBottom = getPadding(content, 'bottom');
+    var footerHeight = footer.height();
+    var footerPaddingTop = getPadding(footer, 'top');
+    var footerPaddingBottom = getPadding(footer, 'bottom');
+    var footerTotalHeight = footerPaddingTop + footerHeight + footerPaddingBottom;
 
-  affixFooterToBottomIfNecessary();
+    content.css('padding-bottom', (contentPaddingBottom + footerTotalHeight) + 'px');
+  });
 });
