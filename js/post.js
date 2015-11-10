@@ -5,6 +5,7 @@ module.exports = (function PostClosure () {
     this.date = date;
     this.name = name;
     this.content = content;
+    this.id = -1;
   }
 
   return Post;
