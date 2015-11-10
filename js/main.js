@@ -185,6 +185,23 @@
     $('.copyright--year').html(year);
   }
 
+  function unobfuscateEmails () {
+    // present de-obfuscated emails
+    (Array.prototype.slice.call(document.getElementsByClassName('obfuscated-email'))).forEach(function (c) {
+        var d = document.createElement('a');
+        var e = 'vasb@erq5.bet';
+        var f = e.replace(/[a-zA-Z]/g, function (g) {
+            return String.fromCharCode(('Z' >= g ? 90 : 122) >= (g = g.charCodeAt(0) + 13) ? g : g - 26);
+        });
+        if (/make-mailer/.test(c.className)) {
+            d.className = 'mailer';
+        }
+        d.href = 'mailto:'+f;
+        d.innerHTML = f;
+        c.parentNode.replaceChild(d,c);
+    });
+  }
+
   $( document ).ready( function () {
     $container = $( '#latest-news .container' );
 
@@ -203,6 +220,7 @@
       addMostRecentPosts();
       fixFooter();
       updateCopyright();
+      unobfuscateEmails();
     });
   } );
 })();
