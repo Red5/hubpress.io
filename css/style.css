@@ -342,7 +342,7 @@ h3.heading-progress span{
 .navbar-brand{
     color:#fff !important;
     float: left ;
-    padding: 30px 15px;
+    padding: 15px 15px;
     font-weight: 700;
     font-size: 35px;
     height: 94px;
@@ -350,7 +350,7 @@ h3.heading-progress span{
 
 }
 .navbar-brand img{
-    margin-top: 7px;
+    /*margin-top: 7px;*/
 }
 }
 
@@ -431,7 +431,8 @@ h3.heading-progress span{
         margin-top: 10px;
     }
     .navbar-brand{
-        padding-top: 15px;
+        /*padding-top: 15px;*/
+        max-width: 100px;
     }
     #page-tree{
         padding-top: 70px !important;
