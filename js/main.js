@@ -9,6 +9,7 @@
   var tmpls       = Handlebars.templates;
   var posts       = [];
   var $container  = null;
+  var footerInfo  = {};
 
   window.requestAnimationFrame = (function(){
     return  window.requestAnimationFrame       ||
@@ -169,15 +170,16 @@
       return +($el.css('padding-'+dir).replace(/px/, ''));
     }
 
-    var footer = $('#footer-defoult');
-    var content = $('#latest-news');
-    var contentPaddingBottom = getPadding(content, 'bottom');
-    var footerHeight = footer.height();
-    var footerPaddingTop = getPadding(footer, 'top');
-    var footerPaddingBottom = getPadding(footer, 'bottom');
-    var footerTotalHeight = footerPaddingTop + footerHeight + footerPaddingBottom;
+    footerInfo.footer               = footerInfo.footer               || $('#footer-defoult');
+    footerInfo.content              = footerInfo.content              || $('#latest-news');
+    footerInfo.content.removeAttr('style');
+    footerInfo.contentPaddingBottom = getPadding(footerInfo.content, 'bottom');
+    footerInfo.footerHeight         = footerInfo.footer.height();
+    footerInfo.footerPaddingTop     = getPadding(footerInfo.footer, 'top');
+    footerInfo.footerPaddingBottom  = getPadding(footerInfo.footer, 'bottom');
+    footerInfo.footerTotalHeight    = (footerInfo.footerPaddingTop + footerInfo.footerHeight + footerInfo.footerPaddingBottom);
 
-    content.css('padding-bottom', (contentPaddingBottom + footerTotalHeight) + 'px');
+    footerInfo.content.css('padding-bottom', (footerInfo.contentPaddingBottom + footerInfo.footerTotalHeight) + 'px');
   }
 
   function updateCopyright () {
@@ -222,5 +224,7 @@
       updateCopyright();
       unobfuscateEmails();
     });
+
+    $(window).on('resize', fixFooter);
   } );
 })();
