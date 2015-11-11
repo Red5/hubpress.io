@@ -1,0 +1,48 @@
+{
+  "name": "red5.github.io",
+  "version": "0.0.1",
+  "description": "Red5.org source",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "pretest": "echo \"Error: no pretest specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "posttest": "echo \"Error: no posttest specified\" && exit 1",
+    "prepublish": "jshint js/**.js",
+    "publish:icons": "node build_scripts/copy_ionic_icons.js",
+    "publish:posts": "handlebars posts/ -e hbs -c handlebars --min -f js/posts.js",
+    "publish:templates": "handlebars templates -e hbs -c handlebars --min -f js/templates.js",
+    "publish:js": "browserify js/main.js > js/bundle.js",
+    "publish": "npm run publish:icons && npm run publish:templates && npm run publish:posts && npm run publish:js",
+    "postpublish": "echo \"Done publishing\"",
+    "start": "NODE_ENV=development PORT=3000 HOST=localhost node index.js",
+    "createpost": "node createpost.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Red5/red5.github.io.git"
+  },
+  "keywords": [
+    "Red5"
+  ],
+  "author": "Kyle Kellogg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Red5/red5.github.io/issues"
+  },
+  "homepage": "https://github.com/Red5/red5.github.io",
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "connect": "^3.3.4",
+    "jshint": "^2.6.0",
+    "serve-static": "^1.9.1",
+    "shelljs": "^0.5.3"
+  },
+  "dependencies": {
+    "handlebars": "^3.0.0",
+    "ionicons": "^2.0.1",
+    "page": "^1.6.3"
+  }
+}
