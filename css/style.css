@@ -87,6 +87,11 @@ p{
     position: relative;
     min-height: 100%;
 }
+
+.reduced-space-after {
+    margin-bottom: 5px;
+}
+
 /*============================================================*/
 /*========= margin padding for giving spaces in rows =========*/
 /*============================================================*/
