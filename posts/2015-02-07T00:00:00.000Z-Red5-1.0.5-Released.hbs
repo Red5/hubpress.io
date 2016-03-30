@@ -1,0 +1,22 @@
+<h2>
+  <a href="#" rel="bookmark" title="Red5 1.0.5 Released" class="news--link">Red5 1.0.5 Released</a>
+</h2>
+
+<p class="post-meta">
+  <span>February 7, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>
+</p>
+
+<p>
+  This release contains a few fixes and modifications found after the 1.0.4 release. Tomcat plugin logging uses a new jar to push its log events to slf4j; also updated is the websocket plugin to version 1.1.
+</p>
+
+<h4>
+  Alert
+</h4>
+<p>
+These artifacts were compiled with jdk8, but had the target set for jdk7 (1.7). This means they will operate correctly only on java 8 / jdk8; in java 6 or 7 you will get a keySet error due to linked jdk8 methods. The sonatype repositories will be updated with proper jdk7 builds today (2/10/14).
+</p>
+
+<p>
+  This release can be found <a href="https://github.com/Red5/red5-server/releases/tag/v1.0.5-RELEASE">here.</a>
+</p>
