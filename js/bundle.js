@@ -229,7 +229,7 @@
     $(window).on('resize', fixFooter);
   } );
 })();
-},{"./post.js":2,"./posts.js":3,"./templates.js":4,"handlebars":25,"page":27}],2:[function(require,module,exports){
+},{"./post.js":2,"./posts.js":3,"./templates.js":4,"handlebars":26,"page":38}],2:[function(require,module,exports){
 module.exports = (function PostClosure () {
   'use strict';
 
@@ -245,317 +245,300 @@ module.exports = (function PostClosure () {
 })();
 
 },{}],3:[function(require,module,exports){
-var Handlebars=require("handlebars"),template=Handlebars.template,templates=Handlebars.templates=Handlebars.templates||{};templates["2010-12-31T00:00:00.000Z-Red5-Teams-Releases-1.0-RC-Build"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 Teams Releases 1.0 RC Build" class="news--link">Red5 Teams Releases 1.0 RC Build</a>\n</h2>\n\n<p class="post-meta">\n  <span>December 31, 2010 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  Freshly into Q1 of 2011, the Red5 team has dropped a release candidate for the impending 1.0 release. A major effort has been placed on fixing bugs for this release and working on solidifying some performance issues with streaming in general. We’re pretty excited to announce that we feel pretty comfortable with what’s been done and were now hoping that users can begin testing their applications and report feedback.\n</p>\n\n<p>\n  A few modifications that are worth noting are:\n</p>\n\n<ul>\n  <li>Fixed War Build</li>\n  <li>Several Fixes to RTMPT and RTMPe</li>\n  <li>Seeking for MP4 Files</li>\n  <li>Serialization Fixes</li>\n  <li>Native Bandwidth Detection Up/Down</li>\n  <li>many more&hellip;</li>\n</ul>\n\n<p>If your interested in a listing of all the fixes, please consult the source changes list (<a href="http://code.google.com/p/red5/source/list">http://code.google.com/p/red5/source/list</a>)</p>\n'},useData:!0}),templates["2012-01-22T00:00:00.000Z-Red5-New-License---Apache-Software-License-2.0"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 New License - Apache Software License 2.0" class="news--link">Red5 New License - Apache Software License 2.0</a>\n</h2>\n\n<p class="post-meta">\n  <span>January 22, 2012 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<div>\n  The Red5 Open Source Media Server has adopted a new license, Apache Software License 2.0. Rather than try and explain our reasoning, I’ve copied my exact email request that I had sent to the team. After a short period, the votes were counted and we had made our decision. Please read the below for more context on why we decided to go with Apache Software License 2.0 (ASL 2.0).\n</div>\n\n<div>The license change is reflected in r4309 (<a href="http://code.google.com/p/red5/source/detail?r=4309#" target="_blank">http://code.google.com/p/red5/source/detail?r=4309#</a>)</div>\n\n<p><br></p>\n\n<div>Team:</div>\n\n<div>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">I hope all of you are doing well and living your lives to the fullest. As many of you know, we as a project are maturing as we gather momentum towards our 1.0 Release. It’s hard to believe that we started the project over 6 years ago around September of 2005 (<a href="http://code.google.com/p/red5/source/list?num=25&amp;start=25" target="_blank">http://code.google.com/p/red5/source/list?num=25&amp;start=25</a>). The motivation behind this email is to ask for your support and approval of a licensing change to the Red5 Project, its’ source code and all accompanying material. I will provide some context and reasoning behind the decision. As some of you are aware, we originally chose LGPLv3 license because it allowed the server to remain open, yet allow for adoption in the industry by groups that could not release their own source code. Generally, we tried to think of Red5 in the same regard as Tomcat. Our goal was to remain open without restricting proliferation among the industry. GPL would have required any code that statically or dynamically linked to the project source be open sourced. This was too restrictive for wide spread use. This then brought us back to LGPLv3 which is where the current codebase stands. It’s been recently brought to my attention that LGPLv3 may be too restrictive for certain use cases that are becoming prevalent in our industry.</span>\n  </p>\n\n  <p>\n    I will explain in simplified terms what consequences our license has on an entire industry today.<br>\n  May I point to Android as the use case involved with this discussion. At the moment, LGPL allows for linking either statically or dynamically to proprietary code. LGPL also ensures that the user of a library has the right to reverse engineer and modifiy the LGPL library in any way they see fit. So for instance, if someone packaged up a web application inside of Red5 and created an installer, the end user could replace the red5.jar with a new version if they so please. &nbsp;However, with Android, an applicaiton is packaged up as a DEX file which is one file that has many libraries compiled into it. Taken directly from android’s open source page:\n  </p>\n\n  <blockquote>\n    <p>\n      <span style="font-family: arial, helvetica, sans-serif;">Here are some of our specific concerns:</span>\n    </p>\n\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">LGPL (in simplified terms) requires either: shipping of source to the application; a written offer for source; or linking the LGPL-ed library dynamically and allowing users to manually upgrade or replace the library. Since Android software is typically shipped in the form of a static system image, complying with these requirements ends up restricting OEMs’ designs. (For instance, it’s difficult for a user to replace a library on read-only flash storage.)</span>\n      </li>\n    </ul>\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">LGPL requires allowance of customer modification and reverse engineering for debugging those modifications. Most device makers do not want to have to be bound by these terms, so to minimize the burden on these companies we minimize usage of LGPL software in userspace.</span>\n      </li>\n    </ul>\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">Historically, LGPL libraries have been the source of a large number of compliance problems for downstream device makers and application developers. Educating engineers on these issues is difficult and slow-going, unfortunately. It’s critical to Android’s success that it be as easy as possible for device makers to comply with the licenses. Given the difficulties with complying with LGPL in the past, it is most prudent to simply not use LGPL libraries if we can avoid it.</span>\n      </li>\n    </ul>\n  </blockquote>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">For these reasons, LGPLv3 is not suggested. We had not foreseen these restrictions and use cases when the project first started. Android as well as other platforms would be severely restricted and proliferation efforts would be limited. Exposure to these platforms increases visibility of the project and pushes us into uncharted area. We can remain confident that our service to the community will continue and that the project may find new and interesting uses.</span>\n  </p>\n\n  <p>\n    Given that these conditions and restrictions do exist as stated above, we should identify what licenses could suit our needs. I propose that we evolve our license to a less restrictive license such as Apache Software License 2.0. This license allows for such use cases as stated above while allowing us to remain true to our original intentions. It should be noted that the Apache Software License is used by complimentary projects such as Tomcat which as you know is our default embedded servlet container. Taken directly from the Apache Foundation site:\n  </p>\n\n</div>\n\n<div>\n  <blockquote>\n    <p>\n      <span style="font-family: arial, helvetica, sans-serif;">Apache License, Version 2.0 (current)<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;"><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a> ( <a href="http://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">TXT</a> or <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">HTML</a> )<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">The 2.0 version of the Apache License was approved by the ASF in 2004. The goals of this license revision have been to reduce the number of frequently asked questions, to allow the license to be reusable without modification by any project (including non-ASF projects), to allow the license to be included by reference instead of listed in every file, to clarify the license on submission of contributions, to require a patent license on contributions that necessarily infringe the contributor’s own patents, and to move comments regarding Apache and other inherited attribution notices to a location outside the license terms (the<a href="http://www.apache.org/licenses/example-NOTICE.txt" target="_blank">NOTICE file</a> ).<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">The result is a license that is supposed to be compatible with other open source licenses, while remaining true to the original goals of the Apache Group and supportive of collaborative development across both nonprofit and commercial organizations. The Apache Software Foundation is still trying to determine if this version of the Apache License is <a href="http://www.apache.org/licenses/GPL-compatibility.html" target="_blank">compatible with the GPL</a>.<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">All packages produced by the ASF are implicitly licensed under the Apache License, Version 2.0, unless otherwise explicitly stated. More developer documentation on how to apply the Apache License to your work can be found in * <a href="http://www.apache.org/dev/apply-license.html" target="_blank">Applying the Apache License, Version 2.0</a> *.</span>\n    </p>\n  </blockquote>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">If you support and approve of the license change, please respond with your approval. If you would like to discuss the ramifications before voting, you may contact out of band and I would be happy to go over these changes. Below are several links which provide useful information and add to the discussion. Please respond as soon as you can. We are looking here for a unanimous vote. If users are unavailable, we will move forward with the majorty vote and continually try to contact previous contributors.</span>\n  </p>\n\n  <p>\n    Last, I want to thank you all for all of your hard work. Your contributions are appreciated. You should be proud of these accomplishments. May you continue living your life to the fullest. &nbsp;Thank you.\n  </p>\n\n  <p>\n    Dominick Accattato<br>\n    Red5 Co-Project Manager &amp; Engineer<br>\n    —<br>\n    <a href="http://gregoire.org/" target="_blank">http://</a><a href="#http://www.infrared5.com/" target="_blank">www.infrared5.com/</a><br>\n    <a href="http://code.google.com/p/red5/" target="_blank">http://code.google.com/p/red5/</a><br>\n    <a href="http://code.google.com/p/blue5/" target="_blank">http://code.google.com/p/jedai/</a>\n  </p>\n\n  <p>\n    <strong>ADDITIONAL INFORMATION</strong>\n  </p>\n</div>\n\n<div>\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">Apache Software License 2.0 looks nice too (ASL)</span>\n  </p>\n\n  <p>\n    The best explanation as to why LGPLv3 doesn’t work with Android<br>\n    <a href="http://source.android.com/source/licenses.html" target="_blank">http://source.android.com/source/licenses.html</a><br>\n    <a href="http://source.android.com/source/licenses.html" target="_blank"></a><br>\n    outlining a simplified explanation of dynamic linking code with LGPLv3<br>\n    <a href="http://www.gnu.org/licenses/lgpl-java.html" target="_blank">http://www.gnu.org/licenses/lgpl-java.html</a><br>\n    <a href="http://www.gnu.org/licenses/lgpl-java.html" target="_blank"></a><br>\n    how VideoLAN changed their license<br>\n    <a href="http://www.videolan.org/press/lgpl.html" target="_blank">http://www.videolan.org/press/lgpl.html</a><br>\n    <a href="http://www.videolan.org/press/lgpl.html" target="_blank"></a><br>\n    GNU’s take on who would need to sign off on a license change<br>\n    <a href="http://www.gnu.org/licenses/gpl-faq.html#LGPLJava" target="_blank">http://www.gnu.org/licenses/gpl-faq.html#LGPLJava</a><br>\n    <a href="http://www.gnu.org/licenses/gpl-faq.html#LGPLJava" target="_blank"></a><br>\n    for context, our license<br>\n    <a href="http://www.gnu.org/licenses/lgpl.html" target="_blank">http://www.gnu.org/licenses/lgpl.html</a>\n  </p>\n</div>\n'},useData:!0}),templates["2012-12-10T00:00:00.000Z-Red5-1.0-Final-Released"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0 Final Released" class="news--link">Red5 1.0 Final Released</a>\n</h1>\n\n<p class="post-meta">\n  <span>December 10, 2012 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  We have some exciting news about Red5. On December 3rd, Paul packaged up the official Red5 1.0 Final distributions. These come in Windows, ZIP and Tarball (<a href="https://code.google.com/p/red5/">https://code.google.com/p/red5/</a>). If you’ve followed the project from its early days, you know just how long the road has been. If you are new to the server, then you should be aware that development started around September 20th 2005. Yes you’ve read that correctly. The server was started in 2005 and it is now 2012 and we are releasing 1.0! What this means is that although we are only just reaching our 1.0 milestone, Red5 is being used in production on a large range of applications and has been for several years. The codebase is solid and the API has lasted the test of time to a large degree.\n</p>\n\n<p>\n  Now we are starting to talk about what direction to take the server. Hopefully, we’ll be able to put some of our ideas past the community over the next few months. Mostly, we are interested in adding support to several of the streaming technologies out there and scaling the server in a conventionally accepted way as compared to the ad-hoc way that this is done today. So to the community, we want to thank you for your support. To all of the developers who have contributed, we are forever in your debt. Last, we’re excited to hear what you build with Red5!\n</p>\n\n<p>\n  Finally, you can grab the latest bits on our downloads page (<a href="/red5-server">http://www.red5.org/red5-server/</a>).\n</p>'},useData:!0});
-},{"handlebars":25}],4:[function(require,module,exports){
-var Handlebars=require("handlebars"),template=Handlebars.template,templates=Handlebars.templates=Handlebars.templates||{};templates["404"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>404 page</h1>"},useData:!0}),templates["about-us"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>About Us</h1>\n\n<p>We are a team of developers passionate about live streaming and enabling other developers to build dynamic, immersive experiences based on Red5. We were the first to reverse engineer the RTMP protocol and open it up to the public, and we are constantly looking for new and innovative ways to improve our offering.</p>\n\n<p>If you feel you can contribute to our team, we would love to hear from you! Just send Dominick an email at dominick (at) red5.org with your interests and qualifications.<p>\n\n<p>Below is a list of our current and past team members and a brief description of their responsibilities.</p>\n\n<p>\n  Paul Gregoire &mdash; mondain (Owner)\n  <ul>\n    <li>Design new features, write code and unit tests</li>\n    <li>Package releases from release branches</li>\n    <li>Have fun hacking and learning new stuff!</li>\n    <li>Triage new issues and support requests from end-users</li>\n  </ul>\n</p>\n\n<p>\n  Dominick Accattato &mdash; daccattato (Owner)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n    <li>Plan the scope of release milestones and track progress</li>\n    <li>Design core libraries, write code and unit tests</li>\n    <li>Design new features, write code and unit tests</li>\n    <li>Document our development process and help new members</li>\n    <li>Write end-user documentation and examples</li>\n  </ul>\n</p>\n\n<p>\n  Chris Allen &mdash; mrchrisallen (Owner)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n  </ul>\n</p>\n\n<p>\n  Tiago Jacobs &mdash; tiago.jacobs (Owner)\n  <ul>\n    <li>Design new features, write code and unit tests</li>\n    <li>Review code for security and scalability</li>\n    <li>Translate UI text and documentation to new locales</li>\n  </ul>\n</p>\n\n<p>\n  Dan Rossi &mdash; electroteque (Committer)\n  <ul>\n    <li>Write end-user documentation and examples</li>\n    <li>Review code for security and scalability</li>\n    <li>Define database schemas and persistence layers</li>\n  </ul>\n</p>\n\n<p>\n  Maxim Solodovnik &mdash; solomax (Committer)\n  <ul>\n    <li>Set up and maintain builds on Apache</li>\n    <li>Write code, new patches</li>\n    <li>Lead WebRTC initiative</li>\n  </ul>\n</p>\n\n<p>\n  Rajdeep Rath &mdash; rajdeeprath (Contributor)\n  <ul>\n    <li>Provide Community Support</li>\n    <li>Lead responses on Mailing List</li>\n    <li>Create Example Apps</li>\n  </ul>\n</p>\n\n<p>\n  Non-Active\n  <ul>\n    <li>joachim.bauch (Committer)</li>\n    <li>steven.gong (Committer)</li>\n    <li>carlsz (Contributor)</li>\n    <li>davi.fol (Contributor)</li>\n    <li>worldofpaper (Contributor)</li>\n    <li>crtmpserver (Contributor)</li>\n    <li>mabrek (Contributor)</li>\n    <li>thijs.triemstra (Contributor)</li>\n    <li>king.selassie (Contributor)</li>\n  </ul>\n</p>\n\n<p>\n  neoriley (Contributor)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n  </ul>\n</p>\n"},useData:!0}),templates.consulting=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Consulting</h1>\n\n<p>Looking for help building custom solutions with Red5? Our team offers consulting and work for hire through two of our companies.</p>\n\n<h2 class="reduced-space-after"><a href="http://infrared5.com" target="_blank" rel="external">Infrared5</a></h2>\n<p>Infrared5 provides real-time, live streaming solutions and custom development to enable new experiences for their customers through the open source Red5 media server and Red5 Pro.</p>\n\n<h2 class="reduced-space-after"><a href="http://international.imdt.com.br/" target="_blank" rel="external">iMDT</a></h2>\n<p>A group of people passionate about the Internet and its world without borders. We want to help solve your problem, using our knowledge and creativity. Smart Business attracts Smart Customers.</p>\n'},useData:!0}),templates.downloads=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>Downloads</h1>"},useData:!0}),templates.features=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Features</h1>\n\n<p>\n  <span style="font-size: 15.6px;">Here’s a brief description of the features in Red5. The&nbsp;<a href="http://trac.red5.org/wiki/Changelog">Changelog</a> contains a more detailed summary of all new features.</span>\n</p>\n\n<ul>\n  <li>Streaming Audio/Video (FLV and MP3)</li>\n  <li>Recording Client Streams (FLV only)</li>\n  <li>Shared Objects</li>\n  <li>Live Stream Publishing (live h264 supported now)</li>\n  <li>Remoting (<a href="http://livedocs.adobe.com/flex/3/langref/flash/net/ObjectEncoding.html#AMF0"> AMF0</a>/<a href="http://livedocs.adobe.com/flex/3/langref/flash/net/ObjectEncoding.html#AMF3"> AMF3</a>)</li>\n</ul>'},useData:!0}),templates["getting-started"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Getting Started</h1>\n\n<p>To see the rest of these Getting Started Video Series <a href="http://www.youtube.com/dominickaccattato#p/c/9B94807E1D0AF2DE" target="_blank">CLICK HERE!</a></p>\n\n<p>As always, please subscribe/rate and comment on the videos. Thanks!</p>\n\n<p></p>\n\n<div class="lyte" id="fIL3GnAfKkI" style="width:425px;height:344px;">\n  <noscript>&lt;a href="http://youtu.be/fIL3GnAfKkI"&gt;&lt;img src="/web/20141009134130im_/http://img.youtube.com/vi/fIL3GnAfKkI/0.jpg"&gt;&lt;br /&gt;Watch on YouTube&lt;/a&gt;</noscript>\n  <script type="text/javascript"><!--\n    var bU=\'#http://www.red5.org/wp-content/plugins/wp-youtube-lyte/lyte/\';\n    var d=document;\n    if(d.addEventListener){\n      d.addEventListener(\'DOMContentLoaded\', insert, false)\n    } else {\n      window.onload=insert\n    }\n    function insert(){\n      if(!d.getElementById(\'lytescr\')){\n        lytescr=d.createElement(\'script\');\n        lytescr.async=true;\n        lytescr.id=\'lytescr\';\n        lytescr.src=\'http://www.red5.org/wp-content/plugins/wp-youtube-lyte/lyte/lyte-min.js\';\n        h=d.getElementsByTagName(\'script\')[0];\n        h.parentNode.insertBefore(lytescr, h)\n      }\n    }; \n--></script>\n</div>'},useData:!0}),templates.index=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<p>Red5 is an open source media server for live streaming solutions of all kinds. It is designed to be flexible with a simple plugin architecture that allows for customization of virtually any VOD and live streaming scenario. Red5 has been and is being used by thousands of companies from Amazon to Facebook.</p>\n\n<p>First created in 2005 by a team of developers that reversed RTMP as an alternative to the Flash Communication Server, Red5 is now used for live streaming beyond Flash including HLS, WebSockets, and RTSP. As part of the Google Summer of Code, the Red5 team is currently building support for WebRTC to enable streaming in the browser without a plugin.</p>\n\n<p>Red5 Pro, our paid, licensed version of Red5 with SDKs for mobile (Android and iOS) and high scalability clustering is available at <a href="http://red5pro.com" target="_blank" rel="external">http://red5pro.com</a>.</p>\n\n<p>By utilizing the Red5 Media Server, you are developing with a truly open and extensible platform that can be used in Video Conferences, Multi-User Gaming and Enterprise Application Software.</p>\n'},useData:!0}),templates["irc-channel"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>IRC Channel</h1>\n\n<p>We created an <a href="http://en.wikipedia.org/wiki/IRC"> IRC</a> channel on the freenode.net network for informal Red5 discussions, asking questions or just hanging out and “socializing”.</p>\n<p>The channel is <a href="irc://irc.freenode.net/red5"> #red5 on irc.freenode.net</a></p>\n<p>Drop by if you are interested in the development of Red5, have a quick  question or just want to get to know the people developing and using it.  If you’re new to IRC, be sure to learn how to <a href="http://www.mikeash.com/getting_answers.html"> get answers</a>.</p>'},useData:!0}),templates["mailing-lists"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Mailing Lists</h1>\n\n<p><strong>Mailing Lists</strong></p>\n\n<p>Communication, discussion and decision making within the Red5 project is primarily done through mailing lists.</p>\n\n<hr>\n\n<h2 id="Users">Users</h2>\n\n<p>The main mailing list for the Red5 community. Subscribe to this list if you’re new, need help, or want to know more about Red5.</p>\n\n<p><a href="http://groups.google.com/group/red5interest" target="_blank" rel="external">Subscribe</a></p>\n\n<h2 id="Devs">Devs</h2>\n\n<p>The mailing list for the Red5 maintainers. Read only for non project members.</p>\n\n<p><a href="http://groups.google.com/group/red5developers" target="_blank" rel="external">Subscribe</a></p>\n\n<h2 id="Announce">Announce</h2>\n\n<p>Announce is a very low traffic mailing list for announcements regarding Red5, mostly release notes and important updates. This list is read-only.</p>\n\n\n<h2 id="Commits">Commits</h2>\n\n<p>Commits is a read-only list which is used to disseminate version control check-in messages made to the source code by the Red5 maintainers.</p>\n\n\n<h2 id="Tickets">Tickets</h2>\n\n<p>Tickets is a fairly high traffic mailing list for ticket changes. Every time a Red5 ticket is modified a new message is posted on this list. This list is read-only.</p>\n\n<p><a href="http://groups.google.com/group/red5tickets" target="_blank" rel="external">Subscribe</a> - <a href="http://groups.google.com/group/red5tickets/topics" target="_blank" rel="external">Archives</a></p>\n\n<h2 id="Builds">Builds</h2>\n\n<p>Builds is a read-only mailing list for reports from our build farm. Every time Hudson encounters a build failure a new message is posted on this list.</p>\n\n<p><a href="http://groups.google.com/group/red5-builds" target="_blank" rel="external">Subscribe</a> - <a href="http://groups.google.com/group/red5-builds/topics" target="_blank" rel="external">Archives</a></p>'},useData:!0}),templates.news=template({1:function(e,n,t,i){var a,r;return r=null!=(r=n.content||(null!=e?e.content:e))?r:n.helperMissing,"<div>\n  "+(null!=(a="function"==typeof r?r.call(e,{name:"content",hash:{},data:i}):r)?a:"")+"\n</div>\n"},compiler:[6,">= 2.0.0-beta.1"],main:function(e,n,t,i){var a;return"<h1>News</h1>\n\n"+(null!=(a=n.each.call(e,null!=e?e.posts:e,{name:"each",hash:{},fn:this.program(1,i,0),inverse:this.noop,data:i}))?a:"")},useData:!0}),templates.post=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>Post</h1>"},useData:!0}),templates.support=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Support</h1>\n\n<p><strong><a href="#http://www.red5.org/downloads/docs/red5-reference-1.0.pdf">Documentation</a></strong></p>\n<p>Reference Manual</p>\n<p><strong><a href="#http://www.red5.org/forums/forums.php">Forums</a></strong></p>\n<p>Common Questions, &nbsp;discussions, tutorials.</p>\n<p><strong><a href="#http://www.red5.org/mailing-lists/">Mailing Lists</a></strong></p>\n<p>Communication, discussion and decision making within the Red5 project is primarily done through mailing lists.</p>\n<p><a href="#http://www.red5.org/irc-channel/"><strong>IRC</strong></a></p>\n<p>We created an <a href="http://en.wikipedia.org/wiki/IRC"> IRC</a> channel on the freenode.net network for informal Red5 discussions, asking questions or just hanging out and “socializing”.</p>\n<p>The channel is <a href="irc://irc.freenode.net/red5"> #red5 on irc.freenode.net</a></p>\n<p>Drop by if you are interested in the development of Red5, have a quick  question or just want to get to know the people developing and using it.  If you’re new to IRC, be sure to learn how to <a href="http://www.mikeash.com/getting_answers.html"> get answers</a>.</p>\n<p><strong>Professional Services</strong></p>\n<div>\n<div>For commercial support, customization, integration, and additional features beyond the open source project please contact:</div>\n<div>\n<br><br>\n<a href="http://www.infrared5.com/"><img class="alignnone" src="/web/20141126154627im_/http://www.infrared5.com/assets/desktop-header-logo-hd.png" alt="" width="164" height="52"></a></div>\n<div>Infrared5 is a Boston based interactive studio that specializes in Red5 application development.</div>\n<div>Learn More (<a href="www.infrared5.com" target="_blank">www.infrared5.com</a>)</div>\n</div>\n<p><br></p>\n<div><a href="http://www.imdt.com.br/"><img class="alignnone" src="/web/20141126154627im_/https://dl.dropboxusercontent.com/u/9226799/iMDT_logo1.png" alt="" width="102" height="38"></a></div>\n<div>iMDT is a professional services company in Brazil that contribute to development of red5 and has &nbsp;professionals with high-level skills on Red5 technology.</div>\n<div>Learn More (<a href="http://www.imdt.com.br/" target="_blank">http://www.imdt.com.br</a>)</div>'},useData:!0});
-},{"handlebars":25}],5:[function(require,module,exports){
-(function (process,__filename){
-/** vim: et:ts=4:sw=4:sts=4
- * @license amdefine 1.0.0 Copyright (c) 2011-2015, The Dojo Foundation All Rights Reserved.
- * Available via the MIT or new BSD license.
- * see: http://github.com/jrburke/amdefine for details
- */
+var Handlebars=require("handlebars"),template=Handlebars.template,templates=Handlebars.templates=Handlebars.templates||{};templates["2010-12-31T00:00:00.000Z-Red5-Teams-Releases-1.0-RC-Build"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 Teams Releases 1.0 RC Build" class="news--link">Red5 Teams Releases 1.0 RC Build</a>\n</h2>\n\n<p class="post-meta">\n  <span>December 31, 2010 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  Freshly into Q1 of 2011, the Red5 team has dropped a release candidate for the impending 1.0 release. A major effort has been placed on fixing bugs for this release and working on solidifying some performance issues with streaming in general. We’re pretty excited to announce that we feel pretty comfortable with what’s been done and were now hoping that users can begin testing their applications and report feedback.\n</p>\n\n<p>\n  A few modifications that are worth noting are:\n</p>\n\n<ul>\n  <li>Fixed War Build</li>\n  <li>Several Fixes to RTMPT and RTMPe</li>\n  <li>Seeking for MP4 Files</li>\n  <li>Serialization Fixes</li>\n  <li>Native Bandwidth Detection Up/Down</li>\n  <li>many more&hellip;</li>\n</ul>\n\n<p>If your interested in a listing of all the fixes, please consult the source changes list (<a href="http://code.google.com/p/red5/source/list" rel="external">http://code.google.com/p/red5/source/list</a>)</p>\n'},useData:!0}),templates["2012-01-22T00:00:00.000Z-Red5-New-License---Apache-Software-License-2.0"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 New License - Apache Software License 2.0" class="news--link">Red5 New License - Apache Software License 2.0</a>\n</h2>\n\n<p class="post-meta">\n  <span>January 22, 2012 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<div>\n  The Red5 Open Source Media Server has adopted a new license, Apache Software License 2.0. Rather than try and explain our reasoning, I’ve copied my exact email request that I had sent to the team. After a short period, the votes were counted and we had made our decision. Please read the below for more context on why we decided to go with Apache Software License 2.0 (ASL 2.0).\n</div>\n\n<div>The license change is reflected in r4309 (<a href="http://code.google.com/p/red5/source/detail?r=4309#" target="_blank" rel="external">http://code.google.com/p/red5/source/detail?r=4309#</a>)</div>\n\n<p><br></p>\n\n<div>Team:</div>\n\n<div>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">I hope all of you are doing well and living your lives to the fullest. As many of you know, we as a project are maturing as we gather momentum towards our 1.0 Release. It’s hard to believe that we started the project over 6 years ago around September of 2005 (<a href="http://code.google.com/p/red5/source/list?num=25&amp;start=25" target="_blank" rel="external">http://code.google.com/p/red5/source/list?num=25&amp;start=25</a>). The motivation behind this email is to ask for your support and approval of a licensing change to the Red5 Project, its’ source code and all accompanying material. I will provide some context and reasoning behind the decision. As some of you are aware, we originally chose LGPLv3 license because it allowed the server to remain open, yet allow for adoption in the industry by groups that could not release their own source code. Generally, we tried to think of Red5 in the same regard as Tomcat. Our goal was to remain open without restricting proliferation among the industry. GPL would have required any code that statically or dynamically linked to the project source be open sourced. This was too restrictive for wide spread use. This then brought us back to LGPLv3 which is where the current codebase stands. It’s been recently brought to my attention that LGPLv3 may be too restrictive for certain use cases that are becoming prevalent in our industry.</span>\n  </p>\n\n  <p>\n    I will explain in simplified terms what consequences our license has on an entire industry today.<br>\n  May I point to Android as the use case involved with this discussion. At the moment, LGPL allows for linking either statically or dynamically to proprietary code. LGPL also ensures that the user of a library has the right to reverse engineer and modifiy the LGPL library in any way they see fit. So for instance, if someone packaged up a web application inside of Red5 and created an installer, the end user could replace the red5.jar with a new version if they so please. &nbsp;However, with Android, an applicaiton is packaged up as a DEX file which is one file that has many libraries compiled into it. Taken directly from android’s open source page:\n  </p>\n\n  <blockquote>\n    <p>\n      <span style="font-family: arial, helvetica, sans-serif;">Here are some of our specific concerns:</span>\n    </p>\n\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">LGPL (in simplified terms) requires either: shipping of source to the application; a written offer for source; or linking the LGPL-ed library dynamically and allowing users to manually upgrade or replace the library. Since Android software is typically shipped in the form of a static system image, complying with these requirements ends up restricting OEMs’ designs. (For instance, it’s difficult for a user to replace a library on read-only flash storage.)</span>\n      </li>\n    </ul>\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">LGPL requires allowance of customer modification and reverse engineering for debugging those modifications. Most device makers do not want to have to be bound by these terms, so to minimize the burden on these companies we minimize usage of LGPL software in userspace.</span>\n      </li>\n    </ul>\n    <ul>\n      <li>\n        <span style="font-family: arial, helvetica, sans-serif;">Historically, LGPL libraries have been the source of a large number of compliance problems for downstream device makers and application developers. Educating engineers on these issues is difficult and slow-going, unfortunately. It’s critical to Android’s success that it be as easy as possible for device makers to comply with the licenses. Given the difficulties with complying with LGPL in the past, it is most prudent to simply not use LGPL libraries if we can avoid it.</span>\n      </li>\n    </ul>\n  </blockquote>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">For these reasons, LGPLv3 is not suggested. We had not foreseen these restrictions and use cases when the project first started. Android as well as other platforms would be severely restricted and proliferation efforts would be limited. Exposure to these platforms increases visibility of the project and pushes us into uncharted area. We can remain confident that our service to the community will continue and that the project may find new and interesting uses.</span>\n  </p>\n\n  <p>\n    Given that these conditions and restrictions do exist as stated above, we should identify what licenses could suit our needs. I propose that we evolve our license to a less restrictive license such as Apache Software License 2.0. This license allows for such use cases as stated above while allowing us to remain true to our original intentions. It should be noted that the Apache Software License is used by complimentary projects such as Tomcat which as you know is our default embedded servlet container. Taken directly from the Apache Foundation site:\n  </p>\n\n</div>\n\n<div>\n  <blockquote>\n    <p>\n      <span style="font-family: arial, helvetica, sans-serif;">Apache License, Version 2.0 (current)<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;"><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a> ( <a href="http://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank" rel="external">TXT</a> or <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">HTML</a> )<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">The 2.0 version of the Apache License was approved by the ASF in 2004. The goals of this license revision have been to reduce the number of frequently asked questions, to allow the license to be reusable without modification by any project (including non-ASF projects), to allow the license to be included by reference instead of listed in every file, to clarify the license on submission of contributions, to require a patent license on contributions that necessarily infringe the contributor’s own patents, and to move comments regarding Apache and other inherited attribution notices to a location outside the license terms (the<a href="http://www.apache.org/licenses/example-NOTICE.txt" target="_blank" rel="external">NOTICE file</a> ).<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">The result is a license that is supposed to be compatible with other open source licenses, while remaining true to the original goals of the Apache Group and supportive of collaborative development across both nonprofit and commercial organizations. The Apache Software Foundation is still trying to determine if this version of the Apache License is <a href="http://www.apache.org/licenses/GPL-compatibility.html" target="_blank" rel="external">compatible with the GPL</a>.<br></span>\n      <span style="font-family: arial, helvetica, sans-serif;">All packages produced by the ASF are implicitly licensed under the Apache License, Version 2.0, unless otherwise explicitly stated. More developer documentation on how to apply the Apache License to your work can be found in * <a href="http://www.apache.org/dev/apply-license.html" target="_blank" rel="external">Applying the Apache License, Version 2.0</a> *.</span>\n    </p>\n  </blockquote>\n\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">If you support and approve of the license change, please respond with your approval. If you would like to discuss the ramifications before voting, you may contact out of band and I would be happy to go over these changes. Below are several links which provide useful information and add to the discussion. Please respond as soon as you can. We are looking here for a unanimous vote. If users are unavailable, we will move forward with the majorty vote and continually try to contact previous contributors.</span>\n  </p>\n\n  <p>\n    Last, I want to thank you all for all of your hard work. Your contributions are appreciated. You should be proud of these accomplishments. May you continue living your life to the fullest. &nbsp;Thank you.\n  </p>\n\n  <p>\n    Dominick Accattato<br>\n    Red5 Co-Project Manager &amp; Engineer<br>\n    —<br>\n    <a href="http://gregoire.org/" target="_blank">http://</a><a href="#http://www.infrared5.com/" target="_blank" rel="external">www.infrared5.com/</a><br>\n    <a href="http://code.google.com/p/red5/" target="_blank" rel="external">http://code.google.com/p/red5/</a><br>\n    <a href="http://code.google.com/p/blue5/" target="_blank" rel="external">http://code.google.com/p/jedai/</a>\n  </p>\n\n  <p>\n    <strong>ADDITIONAL INFORMATION</strong>\n  </p>\n</div>\n\n<div>\n  <p>\n    <span style="font-family: arial, helvetica, sans-serif;">Apache Software License 2.0 looks nice too (ASL)</span>\n  </p>\n\n  <p>\n    The best explanation as to why LGPLv3 doesn’t work with Android<br>\n    <a href="http://source.android.com/source/licenses.html" target="_blank" rel="external">http://source.android.com/source/licenses.html</a><br>\n    <a href="http://source.android.com/source/licenses.html" target="_blank" rel="external"></a><br>\n    outlining a simplified explanation of dynamic linking code with LGPLv3<br>\n    <a href="http://www.gnu.org/licenses/lgpl-java.html" target="_blank" rel="external">http://www.gnu.org/licenses/lgpl-java.html</a><br>\n    <a href="http://www.gnu.org/licenses/lgpl-java.html" target="_blank" rel="external"></a><br>\n    how VideoLAN changed their license<br>\n    <a href="http://www.videolan.org/press/lgpl.html" target="_blank" rel="external">http://www.videolan.org/press/lgpl.html</a><br>\n    <a href="http://www.videolan.org/press/lgpl.html" target="_blank" rel="external"></a><br>\n    GNU’s take on who would need to sign off on a license change<br>\n    <a href="http://www.gnu.org/licenses/gpl-faq.html#LGPLJava" target="_blank" rel="external">http://www.gnu.org/licenses/gpl-faq.html#LGPLJava</a><br>\n    <a href="http://www.gnu.org/licenses/gpl-faq.html#LGPLJava" target="_blank" rel="external"></a><br>\n    for context, our license<br>\n    <a href="http://www.gnu.org/licenses/lgpl.html" target="_blank" rel="external">http://www.gnu.org/licenses/lgpl.html</a>\n  </p>\n</div>\n'},useData:!0}),templates["2012-12-10T00:00:00.000Z-Red5-1.0-Final-Released"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0 Final Released" class="news--link">Red5 1.0 Final Released</a>\n</h1>\n\n<p class="post-meta">\n  <span>December 10, 2012 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  We have some exciting news about Red5. On December 3rd, Paul packaged up the official Red5 1.0 Final distributions. These come in Windows, ZIP and Tarball (<a href="https://code.google.com/p/red5/">https://code.google.com/p/red5/</a>). If you’ve followed the project from its early days, you know just how long the road has been. If you are new to the server, then you should be aware that development started around September 20th 2005. Yes you’ve read that correctly. The server was started in 2005 and it is now 2012 and we are releasing 1.0! What this means is that although we are only just reaching our 1.0 milestone, Red5 is being used in production on a large range of applications and has been for several years. The codebase is solid and the API has lasted the test of time to a large degree.\n</p>\n\n<p>\n  Now we are starting to talk about what direction to take the server. Hopefully, we’ll be able to put some of our ideas past the community over the next few months. Mostly, we are interested in adding support to several of the streaming technologies out there and scaling the server in a conventionally accepted way as compared to the ad-hoc way that this is done today. So to the community, we want to thank you for your support. To all of the developers who have contributed, we are forever in your debt. Last, we’re excited to hear what you build with Red5!\n</p>\n\n<p>\n  Finally, you can grab the latest bits on our downloads page (<a href="/red5-server" rel="external">http://www.red5.org/red5-server/</a>).\n</p>'},useData:!0}),templates["2014-12-26T00:00:00.000Z-Red5-1.0.4-Released"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0.4 Released" class="news--link">Red5 1.0.4 Released</a>\n</h2>\n\n<p class="post-meta">\n  <span>December 26, 2014 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  Several fixes are in this version as well as some restructuring of the project components themselves. This version series is also now available on the Sonatype repositories.\n</p>\n\n<p>\n  Fixes to issues of note: \n</p>\n\n<ul>\n  <li>\n    <a href="https://github.com/Red5/red5-server/issues/36" rel="external">#36</a> appShutdown not triggered\n  </li>\n  <li>\n    <a href="https://github.com/Red5/red5-server/issues/38" rel="external">#38</a> FileConsumer queued write broken\n  </li>\n  <li>\n    <a href="https://github.com/Red5/red5-server/issues/39" rel="external">#39</a> Red5.getConnectionLocal returns wrong connection\n  </li>\n  <li>\n    <a href="https://github.com/Red5/red5-server/issues/40" rel="external">#40</a> Memory leak\n  </li>\n</ul>\n\n<p>\n  Demos are also now included in the tarball/zip as well as the project repository source\n</p>\n\n<p>\n  This release can be found <a href="https://github.com/Red5/red5-server/releases/tag/v1.0.4-RELEASE" rel="external">here.</a>\n</p>\n'},useData:!0}),templates["2015-02-07T00:00:00.000Z-Red5-1.0.5-Released"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0.5 Released" class="news--link">Red5 1.0.5 Released</a>\n</h2>\n\n<p class="post-meta">\n  <span>February 7, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  This release contains a few fixes and modifications found after the 1.0.4 release. Tomcat plugin logging uses a new jar to push its log events to slf4j; also updated is the websocket plugin to version 1.1.\n</p>\n\n<h4>\n  Alert\n</h4>\n<p>\nThese artifacts were compiled with jdk8, but had the target set for jdk7 (1.7). This means they will operate correctly only on java 8 / jdk8; in java 6 or 7 you will get a keySet error due to linked jdk8 methods. The sonatype repositories will be updated with proper jdk7 builds today (2/10/14).\n</p>\n\n<p>\n  This release can be found <a href="https://github.com/Red5/red5-server/releases/tag/v1.0.5-RELEASE" rel="external">here.</a>\n</p>\n'},useData:!0}),templates["2015-09-08T00:00:00.000Z-Red5-1.0.6-Released"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0.6 Released" class="news--link">Red5 1.0.6 Released</a>\n</h2>\n\n<p class="post-meta">\n  <span>September 8, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  This release contains memory leak and threading fixes over previous 1.x versions. Tomcat has been updated to version 8.0.26 and the websocket plugin to version 1.2.\n</p>\n\n<p>\n  The build artifacts have been compiled with JDK7.\n</p>\n\n<p>\n  Releasing information will be posted <a href="https://github.com/Red5/red5-server/wiki/Release-Information" rel="external">on the wiki</a> for reference.\n</p>\n\n<p>\n  This release can be found <a href="https://github.com/Red5/red5-server/releases/tag/v1.0.6-RELEASE" rel="external">here.</a>\n</p>\n'},useData:!0}),templates["2015-09-16T00:00:00.000Z-Red5-1.0.7-Pre-Release"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="Red5 1.0.7 Pre-Release" class="news--link">Red5 1.0.7 Pre-Release</a>\n</h2>\n\n<p class="post-meta">\n  <span>September 16, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\nThis "snapshot" is not a standard "release" and will be updated until 1.0.7 is released.\n</p>\n\n<h4>\n  Updates:\n</h4>\n\n<ul>\n  <li>\n    9/17: Fixed circular dependency in jee-container.xml file\n  </li>\n  <li>\n    9/18: Added RTMP connection modifications to support lower level concurrency control\n  </li>\n  <li>\n    10/7: Updated to include connection concurrency and deadlock fixes\n  </li>\n  <li>\n    10/12: Fixed interoperabilty with AMS and switched stream ids to use double type\n  </li>\n</ul>\n\n<p>\n  The latest release can be found <a href="https://github.com/Red5/red5-server/releases" rel="external">here.</a>\n</p>\n'},useData:!0}),templates["2015-11-04T00:00:00.000Z-What-Weve-Been-Working-On-Red5-Pro"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="What We\'ve Been Working On: Red5 Pro" class="news--link">What We’ve Quietly Been Working On: Red5 Pro - Going Back to Our Roots</a>\n</h2>\n\n<p class="post-meta">\n  <span>November 4, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<div>\n  <a href="https://blog.red5pro.com/what-weve-quietly-been-working-on-red5-pro-going-back-to-our-roots/" rel="external">\n    <img src="https://d1inz2xpofm0ao.cloudfront.net/2016/Jan/red5pro_live_broadcast_2-1453394325551.jpg">\n  </a>\n</div>\n\n<h4>\n  The Times They Are A Changin’\n</h4>\n\n<p>\n  As you might have noticed, we recently updated our website to better reflect our new direction at Infrared5. We are now focused on the <a href="http://red5pro.com" rel="external">Red5 Pro Server and SDKs</a> for iOS and Android that enable developers to build experiences like <a href="https://en.wikipedia.org/wiki/Meerkat_(app)" rel="external">Meerkat</a> or FaceTime in a matter of minutes. Yes, you read that correctly – the ability to create mobile streaming applications in minutes. We originally started this company because of the tremendous reception and interest in the <a href="https://github.com/Red5/red5-server" rel="external">Red5 Open Source Media Server</a>. For those that aren’t familiar with the project, our initial <a href="http://www.infrared5.com/about/team/" rel="external">team</a>, composed of John Grden, Paul Gregoire, Dominick Accattato and myself, worked with other developers around the world to reverse engineer the RTMP protocol and create an open source alternative to Macromedia’s Flash Communication Server. This project eventually became Red5. Two years later as the project grew, we noticed strong demand from developers who needed custom work and consulting on Red5 – so much so that we decided to quit our day jobs and start Infrared5. Over the years though, our focus drifted away from exclusively building live streaming solutions with Red5.\n</p>\n\n<h4>\n  Games and Brass Monkey\n</h4>\n\n<p>\n  Our developers at Infrared5 have always been interested in disrupting the present and pushing the boundaries with new technologies. One of these instances was the Unity game engine. Andy Zupko and John Grden really pushed us in this direction as early adopters of the platform. We built many great games on Unity including the <a href="http://starwars.wikia.com/wiki/Star_Wars:_Trench_Run" rel="external">Star Wars Trench Run</a>, <a href="https://www.youtube.com/watch?v=xQpS3V3MAPI" rel="external">Hasbro’s Game of Life Zapped Edition</a>, and most recently the augmented reality Force Trainer feature in the official <a href="http://www.starwars.com/games-apps/star-wars-app" rel="external">Star Wars app</a>. Even though we are no longer focused on games, our passion for game design and the unique experiences they enable really influence our product design. We want to make using Red5 Pro fun and enjoyable for developers, which in many respects isn’t far off from the goal of a good game.\n</p>\n\n<p>\n  <img src="https://d1inz2xpofm0ao.cloudfront.net/2016/Jan/b_pre_connect-1453394284466.png" alt="Brass Monkey">\n</p>\n\n<p>\n  During this time Rebecca led Infrared5 not just in games projects, but also on IoT and streaming projects that leveraged the open source Red5. Another project that Infrared5 invented and spun off was our smartphone-as-a-game (SAAG?) controller product, Brass Monkey. I moved over to lead that company as CEO in 2010, but eventually I came back to Infrared5 full time, as we weren’t able to effectively convince people to pay for smartphone controlled, browser-based games. Note though, we kept the technology, and it’s now part of Red5 Pro as the <a href="http://red5pro.com/docs/secondscreen/overview/" title="Red5 Pro Second Screen SDK" rel="external">Second Screen SDK</a>.\n</p>\n\n<h4>\n  Going Back To Our Roots\n</h4>\n\n<p>\n  After Steve Jobs announced the demise of <a href="http://www.apple.com/hotnews/thoughts-on-flash/" rel="external">Flash</a> with the lack of support in iOS, and the eventual decay of support for Android, we came to the conclusion that we would solve the “Get off of Flash Problem” for live streaming mobile apps. We heard from a lot of our consulting clients that they wanted this, and instead of trying to build custom solutions over and over again, we decided Red5 needed an upgrade. Mobile SDKs for RTMP are mostly fragmented, hard to use, clunky and generally just a mess. We have now made it our mission to make building a live streaming app for iOS and Android efficient and intuitive. Whether it’s a one-to-many live broadcasting app like Periscope, a many-to-many conferencing app, or a one-to-one video chat application, we want to make it so incredibly simple that any developer can do it.\n</p>\n\n<h4>\n  The Future: WebRTC, Second Screen, IoT\n</h4>\n\n<p>\n  While migrating existing live streaming Flash apps to our new platform is super helpful, what we are most excited about is our vision for the myriad applications of the Red5 Pro technology.\n</p>\n\n<p>\n  An ever-increasing number of browsers are adding support for WebRTC; heck, even <a href="https://webrtchacks.com/ortc-edge-microsoft-qa/" rel="external">Microsoft Edge </a>is getting there! We think this is clearly the future for in-browser streaming, and we are currently working on making Red5 Pro speak this protocol. We see the Red Pro Server as the underlying hub that is able to talk to all different streaming mobile apps and browser apps with minimal latency and outstanding performance.\n</p>\n\n<p>\n  However, the phones we carry in our pockets, the laptops sitting on our desks, and the tablets we browse while sitting on the couch are truly just the beginning. Other devices with cameras that can connect to the internet are the next big thing in live streaming. We are thrilled to make Red5 Pro integrate with all of these Internet of Things devices. The possibilities are endless: imagine fully immersing yourself in a live concert via your VR headset streamed live from a 3D camera at the venue, or enabling live video streaming among military troops over mesh networks going to their AR headsets. There are countless things for developers to build in this space, and we’re excited to see how we can power them through Red5 Pro.\n</p>\n\n<p>\n  Finally, we think that the second screen experiences like what we started with Brass Monkey have huge potential for changing the way people interact with technology. Not only can you as a developer turn phones into game controllers, but you can also create new banking software that enables your phone to interact with and take away information from a screen in bank branches of the future.\n</p>\n\n<p>\n  <img src="http://blog.infrared5.com/wp-content/plugins/directory/2015/11/red5pro_secondscreen.png" alt="red5pro_secondscreen" title="">\n</p>\n\n<h4>\n  …And There’s More!\n</h4>\n\n<p>\n  Of course we can only think of so many scenarios of how our tech can be applied. The true innovation will be done by what you as a developer create with it. What would you build with Red5 Pro? Let us know in the comments. Much more coming your way soon!\n</p>'},useData:!0}),templates["2015-11-10T00:00:00.000Z-Hes-Baaaaaaack"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h2>\n  <a href="#" rel="bookmark" title="He’s BAAAaaaack!" class="news--link">He’s BAAAaaaack!</a>\n</h2>\n\n<p class="post-meta">\n  <span>November 10, 2015 in <a href="/news" title="View all posts in News" rel="category tag">News</a></span>\n</p>\n\n<p>\n  <a href="https://blog.red5pro.com/hes-baaaaaaack/" rel="external">\n    <img src="https://d1inz2xpofm0ao.cloudfront.net/2016/Jan/http___blog_infrared5_com_wp_content_plugins_directory_2015_11_Screen_Shot_2015_11_10_at_4_11_15_PM1-1453395096612.png">\n  </a>\n</p>\n\n<p>\n  Why on earth would anyone choose to rejoin a company where they previously worked? In retrospect, the answer seems quite simple, though of course, taking the plunge is always a daunting task. I assume the statistics do not favor a return to a previous workplace after an extended hiatus, but I could certainly provide a plethora of reasons why I returned to Infrared5 when presented with the opportunity to do so. For me, and in any and all endeavors, the work has to be both intellectually stimulating and challenging. Software development can often be repetitive and monotonous, but fortunately that never was (and still isn’t) the case at Infrared5. Of near equal importance are the workmates that surround me; without a high quality, collaborative and generally pleasant team, even the most stimulating work can lose its shine.\n</p>\n\n<p>\n  So to that end, here is a short checklist I used when making the decision:\n</p>\n\n<ul>\n  <li>\n    Do I enjoy my interactions with my teammates? Check!\n  </li>\n  <li>\n    Do I have respect for them and their abilities? Check!\n  </li>\n  <li>\n    Lastly, Infrared5 wanted to pay me to write code all day and work on Red5! Well that’s a no brainer–count me in!\n  </li>\n</ul>\n\n<p>\n  While working for another company, I had joined the Red5 Pro beta just after it was announced on Twitter. A “Pro” version or Red5 was something Dominick and I had chatted about on a few occasions back in the day–there may or may not have been beer involved. Despite the casual conversations, we both thought there could be immense long-term value in providing the Red5 community with what they were always asking for and talking about on the users list and social media. Providing the ability to stream from any device to any device has always interested me. Alas, I had the desire to turn intrigue into application by helping to create a software which could do just this. Red5 Pro offers Flash streaming, HLS streaming, and RTSP streaming; these technologies are still in-demand and are not interoperable on existing platforms, except on Red5 Pro.\n</p>\n\n<p>\n  In the near future, the public can expect some major disruption on the streaming media front from Red5 Pro. It should come as no surprise to the community that we’re adding the new hotness of technology, WebRTC, to our existing stack. If this addition isn’t “For the Win,” I don’t know what is. I have no qualms about saying that the suite of tools which comprise Red5 Pro will help shape the future of the streaming market–and I couldn’t be happier with my decision to return.\n</p>\n\n<p>\n  -Paul\n</p>\n'},useData:!0});
+},{"handlebars":26}],4:[function(require,module,exports){
+var Handlebars=require("handlebars"),template=Handlebars.template,templates=Handlebars.templates=Handlebars.templates||{};templates["404"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>404 page</h1>"},useData:!0}),templates["about-us"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>About Us</h1>\n\n<p>We are a team of developers passionate about live streaming and enabling other developers to build dynamic, immersive experiences based on Red5. We were the first to reverse engineer the RTMP protocol and open it up to the public, and we are constantly looking for new and innovative ways to improve our offering.</p>\n\n<p>If you feel you can contribute to our team, we would love to hear from you! Just send Dominick an email at dominick (at) red5.org with your interests and qualifications.<p>\n\n<p>Below is a list of our current and past team members and a brief description of their responsibilities.</p>\n\n<p>\n  Paul Gregoire &mdash; mondain (Owner)\n  <ul>\n    <li>Design new features, write code and unit tests</li>\n    <li>Package releases from release branches</li>\n    <li>Have fun hacking and learning new stuff!</li>\n    <li>Triage new issues and support requests from end-users</li>\n  </ul>\n</p>\n\n<p>\n  Dominick Accattato &mdash; daccattato (Owner)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n    <li>Plan the scope of release milestones and track progress</li>\n    <li>Design core libraries, write code and unit tests</li>\n    <li>Design new features, write code and unit tests</li>\n    <li>Document our development process and help new members</li>\n    <li>Write end-user documentation and examples</li>\n  </ul>\n</p>\n\n<p>\n  Chris Allen &mdash; mrchrisallen (Owner)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n  </ul>\n</p>\n\n<p>\n  Tiago Jacobs &mdash; tiago.jacobs (Owner)\n  <ul>\n    <li>Design new features, write code and unit tests</li>\n    <li>Review code for security and scalability</li>\n    <li>Translate UI text and documentation to new locales</li>\n  </ul>\n</p>\n\n<p>\n  Dan Rossi &mdash; electroteque (Committer)\n  <ul>\n    <li>Write end-user documentation and examples</li>\n    <li>Review code for security and scalability</li>\n    <li>Define database schemas and persistence layers</li>\n  </ul>\n</p>\n\n<p>\n  Maxim Solodovnik &mdash; solomax (Committer)\n  <ul>\n    <li>Set up and maintain builds on Apache</li>\n    <li>Write code, new patches</li>\n    <li>Lead WebRTC initiative</li>\n  </ul>\n</p>\n\n<p>\n  Rajdeep Rath &mdash; rajdeeprath (Contributor)\n  <ul>\n    <li>Provide Community Support</li>\n    <li>Lead responses on Mailing List</li>\n    <li>Create Example Apps</li>\n  </ul>\n</p>\n\n<p>\n  Non-Active\n  <ul>\n    <li>joachim.bauch (Committer)</li>\n    <li>steven.gong (Committer)</li>\n    <li>carlsz (Contributor)</li>\n    <li>davi.fol (Contributor)</li>\n    <li>worldofpaper (Contributor)</li>\n    <li>crtmpserver (Contributor)</li>\n    <li>mabrek (Contributor)</li>\n    <li>thijs.triemstra (Contributor)</li>\n    <li>king.selassie (Contributor)</li>\n  </ul>\n</p>\n\n<p>\n  neoriley (Contributor)\n  <ul>\n    <li>Lead by providing a project vision and roadmap</li>\n  </ul>\n</p>\n"},useData:!0}),templates.consulting=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Consulting</h1>\n\n<p>Looking for help building custom solutions with Red5? Our team offers consulting and work for hire through two of our companies.</p>\n\n<h2 class="reduced-space-after"><a href="http://infrared5.com" target="_blank" rel="external">Infrared5</a></h2>\n<p>Infrared5 provides real-time, live streaming solutions and custom development to enable new experiences for their customers through the open source Red5 media server and Red5 Pro.</p>\n\n<h2 class="reduced-space-after"><a href="http://international.imdt.com.br/" target="_blank" rel="external">iMDT</a></h2>\n<p>A group of people passionate about the Internet and its world without borders. We want to help solve your problem, using our knowledge and creativity. Smart Business attracts Smart Customers.</p>\n'},useData:!0}),templates.downloads=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>Downloads</h1>"},useData:!0}),templates.features=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Features</h1>\n\n<p>\n  <span style="font-size: 15.6px;">Here’s a brief description of the features in Red5. The&nbsp;<a href="http://trac.red5.org/wiki/Changelog">Changelog</a> contains a more detailed summary of all new features.</span>\n</p>\n\n<ul>\n  <li>Streaming Audio/Video (FLV and MP3)</li>\n  <li>Recording Client Streams (FLV only)</li>\n  <li>Shared Objects</li>\n  <li>Live Stream Publishing (live h264 supported now)</li>\n  <li>Remoting (<a href="http://livedocs.adobe.com/flex/3/langref/flash/net/ObjectEncoding.html#AMF0" rel="external"> AMF0</a>/<a href="http://livedocs.adobe.com/flex/3/langref/flash/net/ObjectEncoding.html#AMF3" rel="external"> AMF3</a>)</li>\n</ul>'},useData:!0}),templates["getting-started"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Getting Started</h1>\n\n<p>To see the rest of these Getting Started Video Series <a href="http://www.youtube.com/dominickaccattato#p/c/9B94807E1D0AF2DE" target="_blank" rel="external">CLICK HERE!</a></p>\n\n<p>As always, please subscribe/rate and comment on the videos. Thanks!</p>\n\n<p></p>\n\n<div class="lyte" id="fIL3GnAfKkI" style="width:425px;height:344px;">\n  <noscript>&lt;a href="http://youtu.be/fIL3GnAfKkI" rel="external"&gt;&lt;img src="/web/20141009134130im_/http://img.youtube.com/vi/fIL3GnAfKkI/0.jpg"&gt;&lt;br /&gt;Watch on YouTube&lt;/a&gt;</noscript>\n  <script type="text/javascript"><!--\n    var bU=\'#http://www.red5.org/wp-content/plugins/wp-youtube-lyte/lyte/\';\n    var d=document;\n    if(d.addEventListener){\n      d.addEventListener(\'DOMContentLoaded\', insert, false)\n    } else {\n      window.onload=insert\n    }\n    function insert(){\n      if(!d.getElementById(\'lytescr\')){\n        lytescr=d.createElement(\'script\');\n        lytescr.async=true;\n        lytescr.id=\'lytescr\';\n        lytescr.src=\'http://www.red5.org/wp-content/plugins/wp-youtube-lyte/lyte/lyte-min.js\';\n        h=d.getElementsByTagName(\'script\')[0];\n        h.parentNode.insertBefore(lytescr, h)\n      }\n    }; \n--></script>\n</div>'},useData:!0}),templates.index=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<p>Red5 is an open source media server for live streaming solutions of all kinds. It is designed to be flexible with a simple plugin architecture that allows for customization of virtually any VOD and live streaming scenario. Red5 has been and is being used by thousands of companies from Amazon to Facebook.</p>\n\n<p>First created in 2005 by a team of developers that reversed RTMP as an alternative to the Flash Communication Server, Red5 is now used for live streaming beyond Flash including HLS, WebSockets, and RTSP. As part of the Google Summer of Code, the Red5 team is currently building support for WebRTC to enable streaming in the browser without a plugin.</p>\n\n<p>Red5 Pro, our paid, licensed version of Red5 with SDKs for mobile (Android and iOS) and high scalability clustering is available at <a href="http://red5pro.com" target="_blank" rel="external">http://red5pro.com</a>.</p>\n\n<p>By utilizing the Red5 Media Server, you are developing with a truly open and extensible platform that can be used in Video Conferences, Multi-User Gaming and Enterprise Application Software.</p>\n'},useData:!0}),templates["mailing-lists"]=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Mailing Lists</h1>\n\n<p><strong>Mailing Lists</strong></p>\n\n<p>Communication, discussion and decision making within the Red5 project is primarily done through mailing lists.</p>\n\n<hr>\n\n<h2 id="Users">Users</h2>\n\n<p>The main mailing list for the Red5 community. Subscribe to this list if you’re new, need help, or want to know more about Red5.</p>\n\n<p><a href="http://groups.google.com/group/red5interest" target="_blank" rel="external">Subscribe</a></p>\n'},useData:!0}),templates.news=template({1:function(e,n,t,i){var a,r;return r=null!=(r=n.content||(null!=e?e.content:e))?r:n.helperMissing,"<div>\n  "+(null!=(a="function"==typeof r?r.call(e,{name:"content",hash:{},data:i}):r)?a:"")+"\n</div>\n"},compiler:[6,">= 2.0.0-beta.1"],main:function(e,n,t,i){var a;return"<h1>News</h1>\n\n"+(null!=(a=n.each.call(e,null!=e?e.posts:e,{name:"each",hash:{},fn:this.program(1,i,0),inverse:this.noop,data:i}))?a:"")},useData:!0}),templates.post=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return"<h1>Post</h1>"},useData:!0}),templates.support=template({compiler:[6,">= 2.0.0-beta.1"],main:function(){return'<h1>Support</h1>\n\n<p><strong><a href="#http://www.red5.org/downloads/docs/red5-reference-1.0.pdf" rel="external">Documentation</a></strong></p>\n<p>Reference Manual</p>\n<p><strong><a href="#http://www.red5.org/forums/forums.php" rel="external">Forums</a></strong></p>\n<p>Common Questions, &nbsp;discussions, tutorials.</p>\n<p><strong><a href="#http://www.red5.org/mailing-lists/" rel="external">Mailing Lists</a></strong></p>\n<p>Communication, discussion and decision making within the Red5 project is primarily done through mailing lists.</p>\n<p><strong>Professional Services</strong></p>\n<div>\n<div>For commercial support, customization, integration, and additional features beyond the open source project please contact:</div>\n<div>\n<br><br>\n<a href="http://www.infrared5.com/" rel="external"><img class="alignnone" src="/web/20141126154627im_/http://www.infrared5.com/assets/desktop-header-logo-hd.png" alt="" width="164" height="52"></a></div>\n<div>Infrared5 is a Boston based interactive studio that specializes in Red5 application development.</div>\n<div>Learn More (<a href="www.infrared5.com" target="_blank" rel="external">www.infrared5.com</a>)</div>\n</div>\n<p><br></p>\n<div><a href="http://www.imdt.com.br/" rel="external"><img class="alignnone" src="/web/20141126154627im_/https://dl.dropboxusercontent.com/u/9226799/iMDT_logo1.png" alt="" width="102" height="38"></a></div>\n<div>iMDT is a professional services company in Brazil that contribute to development of red5 and has &nbsp;professionals with high-level skills on Red5 technology.</div>\n<div>Learn More (<a href="http://www.imdt.com.br/" target="_blank" rel="external">http://www.imdt.com.br</a>)</div>'},useData:!0});
+},{"handlebars":26}],5:[function(require,module,exports){
 
-/*jslint node: true */
-/*global module, process */
-'use strict';
+},{}],6:[function(require,module,exports){
+(function (process){
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-/**
- * Creates a define for node.
- * @param {Object} module the "module" object that is defined by Node for the
- * current module.
- * @param {Function} [requireFn]. Node's require function for the current module.
- * It only needs to be passed in Node versions before 0.5, when module.require
- * did not exist.
- * @returns {Function} a define function that is usable for the current node
- * module.
- */
-function amdefine(module, requireFn) {
-    'use strict';
-    var defineCache = {},
-        loaderCache = {},
-        alreadyCalled = false,
-        path = require('path'),
-        makeRequire, stringRequire;
-
-    /**
-     * Trims the . and .. from an array of path segments.
-     * It will keep a leading path segment if a .. will become
-     * the first path segment, to help with module name lookups,
-     * which act like paths, but can be remapped. But the end result,
-     * all paths that use this function should look normalized.
-     * NOTE: this method MODIFIES the input array.
-     * @param {Array} ary the array of path segments.
-     */
-    function trimDots(ary) {
-        var i, part;
-        for (i = 0; ary[i]; i+= 1) {
-            part = ary[i];
-            if (part === '.') {
-                ary.splice(i, 1);
-                i -= 1;
-            } else if (part === '..') {
-                if (i === 1 && (ary[2] === '..' || ary[0] === '..')) {
-                    //End of the line. Keep at least one non-dot
-                    //path segment at the front so it can be mapped
-                    //correctly to disk. Otherwise, there is likely
-                    //no path mapping for a path starting with '..'.
-                    //This can still fail, but catches the most reasonable
-                    //uses of ..
-                    break;
-                } else if (i > 0) {
-                    ary.splice(i - 1, 2);
-                    i -= 2;
-                }
-            }
-        }
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
     }
+  }
 
-    function normalize(name, baseName) {
-        var baseParts;
-
-        //Adjust any relative paths.
-        if (name && name.charAt(0) === '.') {
-            //If have a base name, try to normalize against it,
-            //otherwise, assume it is a top-level require that will
-            //be relative to baseUrl in the end.
-            if (baseName) {
-                baseParts = baseName.split('/');
-                baseParts = baseParts.slice(0, baseParts.length - 1);
-                baseParts = baseParts.concat(name.split('/'));
-                trimDots(baseParts);
-                name = baseParts.join('/');
-            }
-        }
-
-        return name;
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
     }
+  }
 
-    /**
-     * Create the normalize() function passed to a loader plugin's
-     * normalize method.
-     */
-    function makeNormalize(relName) {
-        return function (name) {
-            return normalize(name, relName);
-        };
-    }
-
-    function makeLoad(id) {
-        function load(value) {
-            loaderCache[id] = value;
-        }
-
-        load.fromText = function (id, text) {
-            //This one is difficult because the text can/probably uses
-            //define, and any relative paths and requires should be relative
-            //to that id was it would be found on disk. But this would require
-            //bootstrapping a module/require fairly deeply from node core.
-            //Not sure how best to go about that yet.
-            throw new Error('amdefine does not implement load.fromText');
-        };
-
-        return load;
-    }
-
-    makeRequire = function (systemRequire, exports, module, relId) {
-        function amdRequire(deps, callback) {
-            if (typeof deps === 'string') {
-                //Synchronous, single module require('')
-                return stringRequire(systemRequire, exports, module, deps, relId);
-            } else {
-                //Array of dependencies with a callback.
-
-                //Convert the dependencies to modules.
-                deps = deps.map(function (depName) {
-                    return stringRequire(systemRequire, exports, module, depName, relId);
-                });
-
-                //Wait for next tick to call back the require call.
-                if (callback) {
-                    process.nextTick(function () {
-                        callback.apply(null, deps);
-                    });
-                }
-            }
-        }
-
-        amdRequire.toUrl = function (filePath) {
-            if (filePath.indexOf('.') === 0) {
-                return normalize(filePath, path.dirname(module.filename));
-            } else {
-                return filePath;
-            }
-        };
-
-        return amdRequire;
-    };
-
-    //Favor explicit value, passed in if the module wants to support Node 0.4.
-    requireFn = requireFn || function req() {
-        return module.require.apply(module, arguments);
-    };
-
-    function runFactory(id, deps, factory) {
-        var r, e, m, result;
-
-        if (id) {
-            e = loaderCache[id] = {};
-            m = {
-                id: id,
-                uri: __filename,
-                exports: e
-            };
-            r = makeRequire(requireFn, e, m, id);
-        } else {
-            //Only support one define call per file
-            if (alreadyCalled) {
-                throw new Error('amdefine with no module ID cannot be called more than once per file.');
-            }
-            alreadyCalled = true;
-
-            //Use the real variables from node
-            //Use module.exports for exports, since
-            //the exports in here is amdefine exports.
-            e = module.exports;
-            m = module;
-            r = makeRequire(requireFn, e, m, module.id);
-        }
-
-        //If there are dependencies, they are strings, so need
-        //to convert them to dependency values.
-        if (deps) {
-            deps = deps.map(function (depName) {
-                return r(depName);
-            });
-        }
-
-        //Call the factory with the right dependencies.
-        if (typeof factory === 'function') {
-            result = factory.apply(m.exports, deps);
-        } else {
-            result = factory;
-        }
-
-        if (result !== undefined) {
-            m.exports = result;
-            if (id) {
-                loaderCache[id] = m.exports;
-            }
-        }
-    }
-
-    stringRequire = function (systemRequire, exports, module, id, relId) {
-        //Split the ID by a ! so that
-        var index = id.indexOf('!'),
-            originalId = id,
-            prefix, plugin;
-
-        if (index === -1) {
-            id = normalize(id, relId);
-
-            //Straight module lookup. If it is one of the special dependencies,
-            //deal with it, otherwise, delegate to node.
-            if (id === 'require') {
-                return makeRequire(systemRequire, exports, module, relId);
-            } else if (id === 'exports') {
-                return exports;
-            } else if (id === 'module') {
-                return module;
-            } else if (loaderCache.hasOwnProperty(id)) {
-                return loaderCache[id];
-            } else if (defineCache[id]) {
-                runFactory.apply(null, defineCache[id]);
-                return loaderCache[id];
-            } else {
-                if(systemRequire) {
-                    return systemRequire(originalId);
-                } else {
-                    throw new Error('No module with ID: ' + id);
-                }
-            }
-        } else {
-            //There is a plugin in play.
-            prefix = id.substring(0, index);
-            id = id.substring(index + 1, id.length);
-
-            plugin = stringRequire(systemRequire, exports, module, prefix, relId);
-
-            if (plugin.normalize) {
-                id = plugin.normalize(id, makeNormalize(relId));
-            } else {
-                //Normalize the ID normally.
-                id = normalize(id, relId);
-            }
-
-            if (loaderCache[id]) {
-                return loaderCache[id];
-            } else {
-                plugin.load(id, makeRequire(systemRequire, exports, module, relId), makeLoad(id), {});
-
-                return loaderCache[id];
-            }
-        }
-    };
-
-    //Create a define function specific to the module asking for amdefine.
-    function define(id, deps, factory) {
-        if (Array.isArray(id)) {
-            factory = deps;
-            deps = id;
-            id = undefined;
-        } else if (typeof id !== 'string') {
-            factory = id;
-            id = deps = undefined;
-        }
-
-        if (deps && !Array.isArray(deps)) {
-            factory = deps;
-            deps = undefined;
-        }
-
-        if (!deps) {
-            deps = ['require', 'exports', 'module'];
-        }
-
-        //Set up properties for this module. If an ID, then use
-        //internal cache. If no ID, then use the external variables
-        //for this node module.
-        if (id) {
-            //Put the module in deep freeze until there is a
-            //require call for it.
-            defineCache[id] = [id, deps, factory];
-        } else {
-            runFactory(id, deps, factory);
-        }
-    }
-
-    //define.require, which has access to all the values in the
-    //cache. Useful for AMD modules that all have IDs in the file,
-    //but need to finally export a value to node based on one of those
-    //IDs.
-    define.require = function (id) {
-        if (loaderCache[id]) {
-            return loaderCache[id];
-        }
-
-        if (defineCache[id]) {
-            runFactory.apply(null, defineCache[id]);
-            return loaderCache[id];
-        }
-    };
-
-    define.amd = {};
-
-    return define;
+  return parts;
 }
 
-module.exports = amdefine;
+// Split a filename into [root, dir, basename, ext], unix version
+// 'root' is just a slash, or nothing.
+var splitPathRe =
+    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+  return splitPathRe.exec(filename).slice(1);
+};
 
-}).call(this,require('_process'),"/node_modules/amdefine/amdefine.js")
-},{"_process":30,"path":28}],6:[function(require,module,exports){
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
 
-},{}],7:[function(require,module,exports){
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function(path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root && !dir) {
+    // No dirname whatsoever
+    return '.';
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+};
+
+
+exports.basename = function(path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+
+exports.extname = function(path) {
+  return splitPath(path)[3];
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+}).call(this,require('_process'))
+},{"_process":7}],7:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+var queue = [];
+var draining = false;
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    draining = true;
+    var currentQueue;
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        var i = -1;
+        while (++i < len) {
+            currentQueue[i]();
+        }
+        len = queue.length;
+    }
+    draining = false;
+}
+process.nextTick = function (fun) {
+    queue.push(fun);
+    if (!draining) {
+        setTimeout(drainQueue, 0);
+    }
+};
+
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+// TODO(shtylman)
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -619,7 +602,7 @@ inst['default'] = inst;
 
 exports['default'] = inst;
 module.exports = exports['default'];
-},{"./handlebars.runtime":8,"./handlebars/compiler/ast":10,"./handlebars/compiler/base":11,"./handlebars/compiler/compiler":13,"./handlebars/compiler/javascript-compiler":15,"./handlebars/compiler/visitor":18,"./handlebars/no-conflict":21}],8:[function(require,module,exports){
+},{"./handlebars.runtime":9,"./handlebars/compiler/ast":11,"./handlebars/compiler/base":12,"./handlebars/compiler/compiler":14,"./handlebars/compiler/javascript-compiler":16,"./handlebars/compiler/visitor":19,"./handlebars/no-conflict":22}],9:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -680,7 +663,7 @@ inst['default'] = inst;
 
 exports['default'] = inst;
 module.exports = exports['default'];
-},{"./handlebars/base":9,"./handlebars/exception":20,"./handlebars/no-conflict":21,"./handlebars/runtime":22,"./handlebars/safe-string":23,"./handlebars/utils":24}],9:[function(require,module,exports){
+},{"./handlebars/base":10,"./handlebars/exception":21,"./handlebars/no-conflict":22,"./handlebars/runtime":23,"./handlebars/safe-string":24,"./handlebars/utils":25}],10:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -954,7 +937,7 @@ function createFrame(object) {
 }
 
 /* [args, ]options */
-},{"./exception":20,"./utils":24}],10:[function(require,module,exports){
+},{"./exception":21,"./utils":25}],11:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -1107,7 +1090,7 @@ var AST = {
 // must modify the object to operate properly.
 exports['default'] = AST;
 module.exports = exports['default'];
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -1154,7 +1137,7 @@ function parse(input, options) {
   var strip = new _WhitespaceControl2['default']();
   return strip.accept(_parser2['default'].parse(input));
 }
-},{"../utils":24,"./ast":10,"./helpers":14,"./parser":16,"./whitespace-control":19}],12:[function(require,module,exports){
+},{"../utils":25,"./ast":11,"./helpers":15,"./parser":17,"./whitespace-control":20}],13:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -1319,7 +1302,7 @@ exports['default'] = CodeGen;
 module.exports = exports['default'];
 
 /* NOP */
-},{"../utils":24,"source-map":31}],13:[function(require,module,exports){
+},{"../utils":25,"source-map":27}],14:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -1847,7 +1830,7 @@ function transformLiteralToPath(sexpr) {
     sexpr.path = new _AST2['default'].PathExpression(false, 0, [literal.original + ''], literal.original + '', literal.loc);
   }
 }
-},{"../exception":20,"../utils":24,"./ast":10}],14:[function(require,module,exports){
+},{"../exception":21,"../utils":25,"./ast":11}],15:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -1979,7 +1962,7 @@ function prepareBlock(openBlock, program, inverseAndProgram, close, inverted, lo
 
   return new this.BlockStatement(openBlock.path, openBlock.params, openBlock.hash, program, inverse, openBlock.strip, inverseStrip, close && close.strip, this.locInfo(locInfo));
 }
-},{"../exception":20}],15:[function(require,module,exports){
+},{"../exception":21}],16:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -3042,7 +3025,7 @@ function strictLookup(requireTerminal, compiler, parts, type) {
 
 exports['default'] = JavaScriptCompiler;
 module.exports = exports['default'];
-},{"../base":9,"../exception":20,"../utils":24,"./code-gen":12}],16:[function(require,module,exports){
+},{"../base":10,"../exception":21,"../utils":25,"./code-gen":13}],17:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -3721,7 +3704,7 @@ var handlebars = (function () {
     return new Parser();
 })();exports["default"] = handlebars;
 module.exports = exports["default"];
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -3887,7 +3870,7 @@ PrintVisitor.prototype.HashPair = function (pair) {
   return pair.key + '=' + this.accept(pair.value);
 };
 /*eslint-enable new-cap */
-},{"./visitor":18}],18:[function(require,module,exports){
+},{"./visitor":19}],19:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -4020,7 +4003,7 @@ Visitor.prototype = {
 exports['default'] = Visitor;
 module.exports = exports['default'];
 /* content */ /* comment */ /* path */ /* string */ /* number */ /* bool */ /* literal */ /* literal */
-},{"../exception":20,"./ast":10}],19:[function(require,module,exports){
+},{"../exception":21,"./ast":11}],20:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -4233,7 +4216,7 @@ function omitLeft(body, i, multiple) {
 
 exports['default'] = WhitespaceControl;
 module.exports = exports['default'];
-},{"./visitor":18}],20:[function(require,module,exports){
+},{"./visitor":19}],21:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4272,7 +4255,7 @@ Exception.prototype = new Error();
 
 exports['default'] = Exception;
 module.exports = exports['default'];
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -4293,7 +4276,7 @@ exports['default'] = function (Handlebars) {
 
 module.exports = exports['default'];
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
@@ -4526,7 +4509,7 @@ function initData(context, data) {
   }
   return data;
 }
-},{"./base":9,"./exception":20,"./utils":24}],23:[function(require,module,exports){
+},{"./base":10,"./exception":21,"./utils":25}],24:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4541,7 +4524,7 @@ SafeString.prototype.toString = SafeString.prototype.toHTML = function () {
 
 exports['default'] = SafeString;
 module.exports = exports['default'];
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -4656,7 +4639,7 @@ function blockParams(params, ids) {
 function appendContextPath(contextPath, id) {
   return (contextPath ? contextPath + '.' : '') + id;
 }
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 // USAGE:
 // var handlebars = require('handlebars');
 /* eslint-disable no-var */
@@ -4683,1315 +4666,7 @@ if (typeof require !== 'undefined' && require.extensions) {
   require.extensions['.hbs'] = extension;
 }
 
-},{"../dist/cjs/handlebars":7,"../dist/cjs/handlebars/compiler/printer":17,"fs":6}],26:[function(require,module,exports){
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-},{}],27:[function(require,module,exports){
-(function (process){
-  /* globals require, module */
-
-  'use strict';
-
-  /**
-   * Module dependencies.
-   */
-
-  var pathtoRegexp = require('path-to-regexp');
-
-  /**
-   * Module exports.
-   */
-
-  module.exports = page;
-
-  /**
-   * Detect click event
-   */
-  var clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
-
-  /**
-   * To work properly with the URL
-   * history.location generated polyfill in https://github.com/devote/HTML5-History-API
-   */
-
-  var location = ('undefined' !== typeof window) && (window.history.location || window.location);
-
-  /**
-   * Perform initial dispatch.
-   */
-
-  var dispatch = true;
-
-
-  /**
-   * Decode URL components (query string, pathname, hash).
-   * Accommodates both regular percent encoding and x-www-form-urlencoded format.
-   */
-  var decodeURLComponents = true;
-
-  /**
-   * Base path.
-   */
-
-  var base = '';
-
-  /**
-   * Running flag.
-   */
-
-  var running;
-
-  /**
-   * HashBang option
-   */
-
-  var hashbang = false;
-
-  /**
-   * Previous context, for capturing
-   * page exit events.
-   */
-
-  var prevContext;
-
-  /**
-   * Register `path` with callback `fn()`,
-   * or route `path`, or redirection,
-   * or `page.start()`.
-   *
-   *   page(fn);
-   *   page('*', fn);
-   *   page('/user/:id', load, user);
-   *   page('/user/' + user.id, { some: 'thing' });
-   *   page('/user/' + user.id);
-   *   page('/from', '/to')
-   *   page();
-   *
-   * @param {String|Function} path
-   * @param {Function} fn...
-   * @api public
-   */
-
-  function page(path, fn) {
-    // <callback>
-    if ('function' === typeof path) {
-      return page('*', path);
-    }
-
-    // route <path> to <callback ...>
-    if ('function' === typeof fn) {
-      var route = new Route(path);
-      for (var i = 1; i < arguments.length; ++i) {
-        page.callbacks.push(route.middleware(arguments[i]));
-      }
-      // show <path> with [state]
-    } else if ('string' === typeof path) {
-      page['string' === typeof fn ? 'redirect' : 'show'](path, fn);
-      // start [options]
-    } else {
-      page.start(path);
-    }
-  }
-
-  /**
-   * Callback functions.
-   */
-
-  page.callbacks = [];
-  page.exits = [];
-
-  /**
-   * Current path being processed
-   * @type {String}
-   */
-  page.current = '';
-
-  /**
-   * Number of pages navigated to.
-   * @type {number}
-   *
-   *     page.len == 0;
-   *     page('/login');
-   *     page.len == 1;
-   */
-
-  page.len = 0;
-
-  /**
-   * Get or set basepath to `path`.
-   *
-   * @param {String} path
-   * @api public
-   */
-
-  page.base = function(path) {
-    if (0 === arguments.length) return base;
-    base = path;
-  };
-
-  /**
-   * Bind with the given `options`.
-   *
-   * Options:
-   *
-   *    - `click` bind to click events [true]
-   *    - `popstate` bind to popstate [true]
-   *    - `dispatch` perform initial dispatch [true]
-   *
-   * @param {Object} options
-   * @api public
-   */
-
-  page.start = function(options) {
-    options = options || {};
-    if (running) return;
-    running = true;
-    if (false === options.dispatch) dispatch = false;
-    if (false === options.decodeURLComponents) decodeURLComponents = false;
-    if (false !== options.popstate) window.addEventListener('popstate', onpopstate, false);
-    if (false !== options.click) {
-      document.addEventListener(clickEvent, onclick, false);
-    }
-    if (true === options.hashbang) hashbang = true;
-    if (!dispatch) return;
-    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
-    page.replace(url, null, true, dispatch);
-  };
-
-  /**
-   * Unbind click and popstate event handlers.
-   *
-   * @api public
-   */
-
-  page.stop = function() {
-    if (!running) return;
-    page.current = '';
-    page.len = 0;
-    running = false;
-    document.removeEventListener(clickEvent, onclick, false);
-    window.removeEventListener('popstate', onpopstate, false);
-  };
-
-  /**
-   * Show `path` with optional `state` object.
-   *
-   * @param {String} path
-   * @param {Object} state
-   * @param {Boolean} dispatch
-   * @return {Context}
-   * @api public
-   */
-
-  page.show = function(path, state, dispatch, push) {
-    var ctx = new Context(path, state);
-    page.current = ctx.path;
-    if (false !== dispatch) page.dispatch(ctx);
-    if (false !== ctx.handled && false !== push) ctx.pushState();
-    return ctx;
-  };
-
-  /**
-   * Goes back in the history
-   * Back should always let the current route push state and then go back.
-   *
-   * @param {String} path - fallback path to go back if no more history exists, if undefined defaults to page.base
-   * @param {Object} [state]
-   * @api public
-   */
-
-  page.back = function(path, state) {
-    if (page.len > 0) {
-      // this may need more testing to see if all browsers
-      // wait for the next tick to go back in history
-      history.back();
-      page.len--;
-    } else if (path) {
-      setTimeout(function() {
-        page.show(path, state);
-      });
-    }else{
-      setTimeout(function() {
-        page.show(base, state);
-      });
-    }
-  };
-
-
-  /**
-   * Register route to redirect from one path to other
-   * or just redirect to another route
-   *
-   * @param {String} from - if param 'to' is undefined redirects to 'from'
-   * @param {String} [to]
-   * @api public
-   */
-  page.redirect = function(from, to) {
-    // Define route from a path to another
-    if ('string' === typeof from && 'string' === typeof to) {
-      page(from, function(e) {
-        setTimeout(function() {
-          page.replace(to);
-        }, 0);
-      });
-    }
-
-    // Wait for the push state and replace it with another
-    if ('string' === typeof from && 'undefined' === typeof to) {
-      setTimeout(function() {
-        page.replace(from);
-      }, 0);
-    }
-  };
-
-  /**
-   * Replace `path` with optional `state` object.
-   *
-   * @param {String} path
-   * @param {Object} state
-   * @return {Context}
-   * @api public
-   */
-
-
-  page.replace = function(path, state, init, dispatch) {
-    var ctx = new Context(path, state);
-    page.current = ctx.path;
-    ctx.init = init;
-    ctx.save(); // save before dispatching, which may redirect
-    if (false !== dispatch) page.dispatch(ctx);
-    return ctx;
-  };
-
-  /**
-   * Dispatch the given `ctx`.
-   *
-   * @param {Object} ctx
-   * @api private
-   */
-
-  page.dispatch = function(ctx) {
-    var prev = prevContext,
-      i = 0,
-      j = 0;
-
-    prevContext = ctx;
-
-    function nextExit() {
-      var fn = page.exits[j++];
-      if (!fn) return nextEnter();
-      fn(prev, nextExit);
-    }
-
-    function nextEnter() {
-      var fn = page.callbacks[i++];
-
-      if (ctx.path !== page.current) {
-        ctx.handled = false;
-        return;
-      }
-      if (!fn) return unhandled(ctx);
-      fn(ctx, nextEnter);
-    }
-
-    if (prev) {
-      nextExit();
-    } else {
-      nextEnter();
-    }
-  };
-
-  /**
-   * Unhandled `ctx`. When it's not the initial
-   * popstate then redirect. If you wish to handle
-   * 404s on your own use `page('*', callback)`.
-   *
-   * @param {Context} ctx
-   * @api private
-   */
-
-  function unhandled(ctx) {
-    if (ctx.handled) return;
-    var current;
-
-    if (hashbang) {
-      current = base + location.hash.replace('#!', '');
-    } else {
-      current = location.pathname + location.search;
-    }
-
-    if (current === ctx.canonicalPath) return;
-    page.stop();
-    ctx.handled = false;
-    location.href = ctx.canonicalPath;
-  }
-
-  /**
-   * Register an exit route on `path` with
-   * callback `fn()`, which will be called
-   * on the previous context when a new
-   * page is visited.
-   */
-  page.exit = function(path, fn) {
-    if (typeof path === 'function') {
-      return page.exit('*', path);
-    }
-
-    var route = new Route(path);
-    for (var i = 1; i < arguments.length; ++i) {
-      page.exits.push(route.middleware(arguments[i]));
-    }
-  };
-
-  /**
-   * Remove URL encoding from the given `str`.
-   * Accommodates whitespace in both x-www-form-urlencoded
-   * and regular percent-encoded form.
-   *
-   * @param {str} URL component to decode
-   */
-  function decodeURLEncodedURIComponent(val) {
-    if (typeof val !== 'string') { return val; }
-    return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
-  }
-
-  /**
-   * Initialize a new "request" `Context`
-   * with the given `path` and optional initial `state`.
-   *
-   * @param {String} path
-   * @param {Object} state
-   * @api public
-   */
-
-  function Context(path, state) {
-    if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
-    var i = path.indexOf('?');
-
-    this.canonicalPath = path;
-    this.path = path.replace(base, '') || '/';
-    if (hashbang) this.path = this.path.replace('#!', '') || '/';
-
-    this.title = document.title;
-    this.state = state || {};
-    this.state.path = path;
-    this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
-    this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
-    this.params = {};
-
-    // fragment
-    this.hash = '';
-    if (!hashbang) {
-      if (!~this.path.indexOf('#')) return;
-      var parts = this.path.split('#');
-      this.path = parts[0];
-      this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
-      this.querystring = this.querystring.split('#')[0];
-    }
-  }
-
-  /**
-   * Expose `Context`.
-   */
-
-  page.Context = Context;
-
-  /**
-   * Push state.
-   *
-   * @api private
-   */
-
-  Context.prototype.pushState = function() {
-    page.len++;
-    history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  };
-
-  /**
-   * Save the context state.
-   *
-   * @api public
-   */
-
-  Context.prototype.save = function() {
-    history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  };
-
-  /**
-   * Initialize `Route` with the given HTTP `path`,
-   * and an array of `callbacks` and `options`.
-   *
-   * Options:
-   *
-   *   - `sensitive`    enable case-sensitive routes
-   *   - `strict`       enable strict matching for trailing slashes
-   *
-   * @param {String} path
-   * @param {Object} options.
-   * @api private
-   */
-
-  function Route(path, options) {
-    options = options || {};
-    this.path = (path === '*') ? '(.*)' : path;
-    this.method = 'GET';
-    this.regexp = pathtoRegexp(this.path,
-      this.keys = [],
-      options.sensitive,
-      options.strict);
-  }
-
-  /**
-   * Expose `Route`.
-   */
-
-  page.Route = Route;
-
-  /**
-   * Return route middleware with
-   * the given callback `fn()`.
-   *
-   * @param {Function} fn
-   * @return {Function}
-   * @api public
-   */
-
-  Route.prototype.middleware = function(fn) {
-    var self = this;
-    return function(ctx, next) {
-      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
-      next();
-    };
-  };
-
-  /**
-   * Check if this route matches `path`, if so
-   * populate `params`.
-   *
-   * @param {String} path
-   * @param {Object} params
-   * @return {Boolean}
-   * @api private
-   */
-
-  Route.prototype.match = function(path, params) {
-    var keys = this.keys,
-      qsIndex = path.indexOf('?'),
-      pathname = ~qsIndex ? path.slice(0, qsIndex) : path,
-      m = this.regexp.exec(decodeURIComponent(pathname));
-
-    if (!m) return false;
-
-    for (var i = 1, len = m.length; i < len; ++i) {
-      var key = keys[i - 1];
-      var val = decodeURLEncodedURIComponent(m[i]);
-      if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
-        params[key.name] = val;
-      }
-    }
-
-    return true;
-  };
-
-
-  /**
-   * Handle "populate" events.
-   */
-
-  var onpopstate = (function () {
-    var loaded = false;
-    if ('undefined' === typeof window) {
-      return;
-    }
-    if (document.readyState === 'complete') {
-      loaded = true;
-    } else {
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          loaded = true;
-        }, 0);
-      });
-    }
-    return function onpopstate(e) {
-      if (!loaded) return;
-      if (e.state) {
-        var path = e.state.path;
-        page.replace(path, e.state);
-      } else {
-        page.show(location.pathname + location.hash, undefined, undefined, false);
-      }
-    };
-  })();
-  /**
-   * Handle "click" events.
-   */
-
-  function onclick(e) {
-
-    if (1 !== which(e)) return;
-
-    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-    if (e.defaultPrevented) return;
-
-
-
-    // ensure link
-    var el = e.target;
-    while (el && 'A' !== el.nodeName) el = el.parentNode;
-    if (!el || 'A' !== el.nodeName) return;
-
-
-
-    // Ignore if tag has
-    // 1. "download" attribute
-    // 2. rel="external" attribute
-    if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
-
-    // ensure non-hash for the same path
-    var link = el.getAttribute('href');
-    if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
-
-
-
-    // Check for mailto: in the href
-    if (link && link.indexOf('mailto:') > -1) return;
-
-    // check target
-    if (el.target) return;
-
-    // x-origin
-    if (!sameOrigin(el.href)) return;
-
-
-
-    // rebuild path
-    var path = el.pathname + el.search + (el.hash || '');
-
-    // strip leading "/[drive letter]:" on NW.js on Windows
-    if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
-      path = path.replace(/^\/[a-zA-Z]:\//, '/');
-    }
-
-    // same page
-    var orig = path;
-
-    if (path.indexOf(base) === 0) {
-      path = path.substr(base.length);
-    }
-
-    if (hashbang) path = path.replace('#!', '');
-
-    if (base && orig === path) return;
-
-    e.preventDefault();
-    page.show(orig);
-  }
-
-  /**
-   * Event button.
-   */
-
-  function which(e) {
-    e = e || window.event;
-    return null === e.which ? e.button : e.which;
-  }
-
-  /**
-   * Check if `href` is the same origin.
-   */
-
-  function sameOrigin(href) {
-    var origin = location.protocol + '//' + location.hostname;
-    if (location.port) origin += ':' + location.port;
-    return (href && (0 === href.indexOf(origin)));
-  }
-
-  page.sameOrigin = sameOrigin;
-
-}).call(this,require('_process'))
-},{"_process":30,"path-to-regexp":29}],28:[function(require,module,exports){
-(function (process){
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// Split a filename into [root, dir, basename, ext], unix version
-// 'root' is just a slash, or nothing.
-var splitPathRe =
-    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-var splitPath = function(filename) {
-  return splitPathRe.exec(filename).slice(1);
-};
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function(path) {
-  var result = splitPath(path),
-      root = result[0],
-      dir = result[1];
-
-  if (!root && !dir) {
-    // No dirname whatsoever
-    return '.';
-  }
-
-  if (dir) {
-    // It has a dirname, strip trailing slash
-    dir = dir.substr(0, dir.length - 1);
-  }
-
-  return root + dir;
-};
-
-
-exports.basename = function(path, ext) {
-  var f = splitPath(path)[2];
-  // TODO: make this comparison case-insensitive on windows?
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-
-exports.extname = function(path) {
-  return splitPath(path)[3];
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-}).call(this,require('_process'))
-},{"_process":30}],29:[function(require,module,exports){
-var isarray = require('isarray')
-
-/**
- * Expose `pathToRegexp`.
- */
-module.exports = pathToRegexp
-module.exports.parse = parse
-module.exports.compile = compile
-module.exports.tokensToFunction = tokensToFunction
-module.exports.tokensToRegExp = tokensToRegExp
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))'
-].join('|'), 'g')
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {String} str
- * @return {Array}
- */
-function parse (str) {
-  var tokens = []
-  var key = 0
-  var index = 0
-  var path = ''
-  var res
-
-  while ((res = PATH_REGEXP.exec(str)) != null) {
-    var m = res[0]
-    var escaped = res[1]
-    var offset = res.index
-    path += str.slice(index, offset)
-    index = offset + m.length
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1]
-      continue
-    }
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path)
-      path = ''
-    }
-
-    var prefix = res[2]
-    var name = res[3]
-    var capture = res[4]
-    var group = res[5]
-    var suffix = res[6]
-    var asterisk = res[7]
-
-    var repeat = suffix === '+' || suffix === '*'
-    var optional = suffix === '?' || suffix === '*'
-    var delimiter = prefix || '/'
-    var pattern = capture || group || (asterisk ? '.*' : '[^' + delimiter + ']+?')
-
-    tokens.push({
-      name: name || key++,
-      prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      pattern: escapeGroup(pattern)
-    })
-  }
-
-  // Match any characters still remaining.
-  if (index < str.length) {
-    path += str.substr(index)
-  }
-
-  // If the path exists, push it onto the end.
-  if (path) {
-    tokens.push(path)
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {String}   str
- * @return {Function}
- */
-function compile (str) {
-  return tokensToFunction(parse(str))
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length)
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^' + tokens[i].pattern + '$')
-    }
-  }
-
-  return function (obj) {
-    var path = ''
-    var data = obj || {}
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i]
-
-      if (typeof token === 'string') {
-        path += token
-
-        continue
-      }
-
-      var value = data[token.name]
-      var segment
-
-      if (value == null) {
-        if (token.optional) {
-          continue
-        } else {
-          throw new TypeError('Expected "' + token.name + '" to be defined')
-        }
-      }
-
-      if (isarray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but received "' + value + '"')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) {
-            continue
-          } else {
-            throw new TypeError('Expected "' + token.name + '" to not be empty')
-          }
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encodeURIComponent(value[j])
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment
-        }
-
-        continue
-      }
-
-      segment = encodeURIComponent(value)
-
-      if (!matches[i].test(segment)) {
-        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-      }
-
-      path += token.prefix + segment
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {String} str
- * @return {String}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|\/])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {String} group
- * @return {String}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1')
-}
-
-/**
- * Attach the keys as a property of the regexp.
- *
- * @param  {RegExp} re
- * @param  {Array}  keys
- * @return {RegExp}
- */
-function attachKeys (re, keys) {
-  re.keys = keys
-  return re
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {String}
- */
-function flags (options) {
-  return options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {RegExp} path
- * @param  {Array}  keys
- * @return {RegExp}
- */
-function regexpToRegexp (path, keys) {
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g)
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        pattern: null
-      })
-    }
-  }
-
-  return attachKeys(path, keys)
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {Array}  path
- * @param  {Array}  keys
- * @param  {Object} options
- * @return {RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = []
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source)
-  }
-
-  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
-
-  return attachKeys(regexp, keys)
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {String} path
- * @param  {Array}  keys
- * @param  {Object} options
- * @return {RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  var tokens = parse(path)
-  var re = tokensToRegExp(tokens, options)
-
-  // Attach keys back to the regexp.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] !== 'string') {
-      keys.push(tokens[i])
-    }
-  }
-
-  return attachKeys(re, keys)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {Array}  tokens
- * @param  {Array}  keys
- * @param  {Object} options
- * @return {RegExp}
- */
-function tokensToRegExp (tokens, options) {
-  options = options || {}
-
-  var strict = options.strict
-  var end = options.end !== false
-  var route = ''
-  var lastToken = tokens[tokens.length - 1]
-  var endsWithSlash = typeof lastToken === 'string' && /\/$/.test(lastToken)
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i]
-
-    if (typeof token === 'string') {
-      route += escapeString(token)
-    } else {
-      var prefix = escapeString(token.prefix)
-      var capture = token.pattern
-
-      if (token.repeat) {
-        capture += '(?:' + prefix + capture + ')*'
-      }
-
-      if (token.optional) {
-        if (prefix) {
-          capture = '(?:' + prefix + '(' + capture + '))?'
-        } else {
-          capture = '(' + capture + ')?'
-        }
-      } else {
-        capture = prefix + '(' + capture + ')'
-      }
-
-      route += capture
-    }
-  }
-
-  // In non-strict mode we allow a slash at the end of match. If the path to
-  // match already ends with a slash, we remove it for consistency. The slash
-  // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
-  if (!strict) {
-    route = (endsWithSlash ? route.slice(0, -2) : route) + '(?:\\/(?=$))?'
-  }
-
-  if (end) {
-    route += '$'
-  } else {
-    // In non-ending mode, we need the capturing groups to match as much as
-    // possible by using a positive lookahead to the end or next path segment.
-    route += strict && endsWithSlash ? '' : '(?=\\/|$)'
-  }
-
-  return new RegExp('^' + route, flags(options))
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(String|RegExp|Array)} path
- * @param  {Array}                 [keys]
- * @param  {Object}                [options]
- * @return {RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  keys = keys || []
-
-  if (!isarray(keys)) {
-    options = keys
-    keys = []
-  } else if (!options) {
-    options = {}
-  }
-
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, keys, options)
-  }
-
-  if (isarray(path)) {
-    return arrayToRegexp(path, keys, options)
-  }
-
-  return stringToRegexp(path, keys, options)
-}
-
-},{"isarray":26}],30:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-var queue = [];
-var draining = false;
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    draining = true;
-    var currentQueue;
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        var i = -1;
-        while (++i < len) {
-            currentQueue[i]();
-        }
-        len = queue.length;
-    }
-    draining = false;
-}
-process.nextTick = function (fun) {
-    queue.push(fun);
-    if (!draining) {
-        setTimeout(drainQueue, 0);
-    }
-};
-
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-// TODO(shtylman)
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-},{}],31:[function(require,module,exports){
+},{"../dist/cjs/handlebars":8,"../dist/cjs/handlebars/compiler/printer":18,"fs":5}],27:[function(require,module,exports){
 /*
  * Copyright 2009-2011 Mozilla Foundation and contributors
  * Licensed under the New BSD license. See LICENSE.txt or:
@@ -6001,7 +4676,7 @@ exports.SourceMapGenerator = require('./source-map/source-map-generator').Source
 exports.SourceMapConsumer = require('./source-map/source-map-consumer').SourceMapConsumer;
 exports.SourceNode = require('./source-map/source-node').SourceNode;
 
-},{"./source-map/source-map-consumer":37,"./source-map/source-map-generator":38,"./source-map/source-node":39}],32:[function(require,module,exports){
+},{"./source-map/source-map-consumer":33,"./source-map/source-map-generator":34,"./source-map/source-node":35}],28:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -6100,7 +4775,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":40,"amdefine":5}],33:[function(require,module,exports){
+},{"./util":36,"amdefine":37}],29:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -6244,7 +4919,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./base64":34,"amdefine":5}],34:[function(require,module,exports){
+},{"./base64":30,"amdefine":37}],30:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -6288,7 +4963,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":5}],35:[function(require,module,exports){
+},{"amdefine":37}],31:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -6370,7 +5045,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":5}],36:[function(require,module,exports){
+},{"amdefine":37}],32:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2014 Mozilla Foundation and contributors
@@ -6458,7 +5133,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./util":40,"amdefine":5}],37:[function(require,module,exports){
+},{"./util":36,"amdefine":37}],33:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -7035,7 +5710,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":32,"./base64-vlq":33,"./binary-search":35,"./util":40,"amdefine":5}],38:[function(require,module,exports){
+},{"./array-set":28,"./base64-vlq":29,"./binary-search":31,"./util":36,"amdefine":37}],34:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -7437,7 +6112,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./array-set":32,"./base64-vlq":33,"./mapping-list":36,"./util":40,"amdefine":5}],39:[function(require,module,exports){
+},{"./array-set":28,"./base64-vlq":29,"./mapping-list":32,"./util":36,"amdefine":37}],35:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -7853,7 +6528,7 @@ define(function (require, exports, module) {
 
 });
 
-},{"./source-map-generator":38,"./util":40,"amdefine":5}],40:[function(require,module,exports){
+},{"./source-map-generator":34,"./util":36,"amdefine":37}],36:[function(require,module,exports){
 /* -*- Mode: js; js-indent-level: 2; -*- */
 /*
  * Copyright 2011 Mozilla Foundation and contributors
@@ -8174,4 +6849,1332 @@ define(function (require, exports, module) {
 
 });
 
-},{"amdefine":5}]},{},[1]);
+},{"amdefine":37}],37:[function(require,module,exports){
+(function (process,__filename){
+/** vim: et:ts=4:sw=4:sts=4
+ * @license amdefine 1.0.0 Copyright (c) 2011-2015, The Dojo Foundation All Rights Reserved.
+ * Available via the MIT or new BSD license.
+ * see: http://github.com/jrburke/amdefine for details
+ */
+
+/*jslint node: true */
+/*global module, process */
+'use strict';
+
+/**
+ * Creates a define for node.
+ * @param {Object} module the "module" object that is defined by Node for the
+ * current module.
+ * @param {Function} [requireFn]. Node's require function for the current module.
+ * It only needs to be passed in Node versions before 0.5, when module.require
+ * did not exist.
+ * @returns {Function} a define function that is usable for the current node
+ * module.
+ */
+function amdefine(module, requireFn) {
+    'use strict';
+    var defineCache = {},
+        loaderCache = {},
+        alreadyCalled = false,
+        path = require('path'),
+        makeRequire, stringRequire;
+
+    /**
+     * Trims the . and .. from an array of path segments.
+     * It will keep a leading path segment if a .. will become
+     * the first path segment, to help with module name lookups,
+     * which act like paths, but can be remapped. But the end result,
+     * all paths that use this function should look normalized.
+     * NOTE: this method MODIFIES the input array.
+     * @param {Array} ary the array of path segments.
+     */
+    function trimDots(ary) {
+        var i, part;
+        for (i = 0; ary[i]; i+= 1) {
+            part = ary[i];
+            if (part === '.') {
+                ary.splice(i, 1);
+                i -= 1;
+            } else if (part === '..') {
+                if (i === 1 && (ary[2] === '..' || ary[0] === '..')) {
+                    //End of the line. Keep at least one non-dot
+                    //path segment at the front so it can be mapped
+                    //correctly to disk. Otherwise, there is likely
+                    //no path mapping for a path starting with '..'.
+                    //This can still fail, but catches the most reasonable
+                    //uses of ..
+                    break;
+                } else if (i > 0) {
+                    ary.splice(i - 1, 2);
+                    i -= 2;
+                }
+            }
+        }
+    }
+
+    function normalize(name, baseName) {
+        var baseParts;
+
+        //Adjust any relative paths.
+        if (name && name.charAt(0) === '.') {
+            //If have a base name, try to normalize against it,
+            //otherwise, assume it is a top-level require that will
+            //be relative to baseUrl in the end.
+            if (baseName) {
+                baseParts = baseName.split('/');
+                baseParts = baseParts.slice(0, baseParts.length - 1);
+                baseParts = baseParts.concat(name.split('/'));
+                trimDots(baseParts);
+                name = baseParts.join('/');
+            }
+        }
+
+        return name;
+    }
+
+    /**
+     * Create the normalize() function passed to a loader plugin's
+     * normalize method.
+     */
+    function makeNormalize(relName) {
+        return function (name) {
+            return normalize(name, relName);
+        };
+    }
+
+    function makeLoad(id) {
+        function load(value) {
+            loaderCache[id] = value;
+        }
+
+        load.fromText = function (id, text) {
+            //This one is difficult because the text can/probably uses
+            //define, and any relative paths and requires should be relative
+            //to that id was it would be found on disk. But this would require
+            //bootstrapping a module/require fairly deeply from node core.
+            //Not sure how best to go about that yet.
+            throw new Error('amdefine does not implement load.fromText');
+        };
+
+        return load;
+    }
+
+    makeRequire = function (systemRequire, exports, module, relId) {
+        function amdRequire(deps, callback) {
+            if (typeof deps === 'string') {
+                //Synchronous, single module require('')
+                return stringRequire(systemRequire, exports, module, deps, relId);
+            } else {
+                //Array of dependencies with a callback.
+
+                //Convert the dependencies to modules.
+                deps = deps.map(function (depName) {
+                    return stringRequire(systemRequire, exports, module, depName, relId);
+                });
+
+                //Wait for next tick to call back the require call.
+                if (callback) {
+                    process.nextTick(function () {
+                        callback.apply(null, deps);
+                    });
+                }
+            }
+        }
+
+        amdRequire.toUrl = function (filePath) {
+            if (filePath.indexOf('.') === 0) {
+                return normalize(filePath, path.dirname(module.filename));
+            } else {
+                return filePath;
+            }
+        };
+
+        return amdRequire;
+    };
+
+    //Favor explicit value, passed in if the module wants to support Node 0.4.
+    requireFn = requireFn || function req() {
+        return module.require.apply(module, arguments);
+    };
+
+    function runFactory(id, deps, factory) {
+        var r, e, m, result;
+
+        if (id) {
+            e = loaderCache[id] = {};
+            m = {
+                id: id,
+                uri: __filename,
+                exports: e
+            };
+            r = makeRequire(requireFn, e, m, id);
+        } else {
+            //Only support one define call per file
+            if (alreadyCalled) {
+                throw new Error('amdefine with no module ID cannot be called more than once per file.');
+            }
+            alreadyCalled = true;
+
+            //Use the real variables from node
+            //Use module.exports for exports, since
+            //the exports in here is amdefine exports.
+            e = module.exports;
+            m = module;
+            r = makeRequire(requireFn, e, m, module.id);
+        }
+
+        //If there are dependencies, they are strings, so need
+        //to convert them to dependency values.
+        if (deps) {
+            deps = deps.map(function (depName) {
+                return r(depName);
+            });
+        }
+
+        //Call the factory with the right dependencies.
+        if (typeof factory === 'function') {
+            result = factory.apply(m.exports, deps);
+        } else {
+            result = factory;
+        }
+
+        if (result !== undefined) {
+            m.exports = result;
+            if (id) {
+                loaderCache[id] = m.exports;
+            }
+        }
+    }
+
+    stringRequire = function (systemRequire, exports, module, id, relId) {
+        //Split the ID by a ! so that
+        var index = id.indexOf('!'),
+            originalId = id,
+            prefix, plugin;
+
+        if (index === -1) {
+            id = normalize(id, relId);
+
+            //Straight module lookup. If it is one of the special dependencies,
+            //deal with it, otherwise, delegate to node.
+            if (id === 'require') {
+                return makeRequire(systemRequire, exports, module, relId);
+            } else if (id === 'exports') {
+                return exports;
+            } else if (id === 'module') {
+                return module;
+            } else if (loaderCache.hasOwnProperty(id)) {
+                return loaderCache[id];
+            } else if (defineCache[id]) {
+                runFactory.apply(null, defineCache[id]);
+                return loaderCache[id];
+            } else {
+                if(systemRequire) {
+                    return systemRequire(originalId);
+                } else {
+                    throw new Error('No module with ID: ' + id);
+                }
+            }
+        } else {
+            //There is a plugin in play.
+            prefix = id.substring(0, index);
+            id = id.substring(index + 1, id.length);
+
+            plugin = stringRequire(systemRequire, exports, module, prefix, relId);
+
+            if (plugin.normalize) {
+                id = plugin.normalize(id, makeNormalize(relId));
+            } else {
+                //Normalize the ID normally.
+                id = normalize(id, relId);
+            }
+
+            if (loaderCache[id]) {
+                return loaderCache[id];
+            } else {
+                plugin.load(id, makeRequire(systemRequire, exports, module, relId), makeLoad(id), {});
+
+                return loaderCache[id];
+            }
+        }
+    };
+
+    //Create a define function specific to the module asking for amdefine.
+    function define(id, deps, factory) {
+        if (Array.isArray(id)) {
+            factory = deps;
+            deps = id;
+            id = undefined;
+        } else if (typeof id !== 'string') {
+            factory = id;
+            id = deps = undefined;
+        }
+
+        if (deps && !Array.isArray(deps)) {
+            factory = deps;
+            deps = undefined;
+        }
+
+        if (!deps) {
+            deps = ['require', 'exports', 'module'];
+        }
+
+        //Set up properties for this module. If an ID, then use
+        //internal cache. If no ID, then use the external variables
+        //for this node module.
+        if (id) {
+            //Put the module in deep freeze until there is a
+            //require call for it.
+            defineCache[id] = [id, deps, factory];
+        } else {
+            runFactory(id, deps, factory);
+        }
+    }
+
+    //define.require, which has access to all the values in the
+    //cache. Useful for AMD modules that all have IDs in the file,
+    //but need to finally export a value to node based on one of those
+    //IDs.
+    define.require = function (id) {
+        if (loaderCache[id]) {
+            return loaderCache[id];
+        }
+
+        if (defineCache[id]) {
+            runFactory.apply(null, defineCache[id]);
+            return loaderCache[id];
+        }
+    };
+
+    define.amd = {};
+
+    return define;
+}
+
+module.exports = amdefine;
+
+}).call(this,require('_process'),"/node_modules/handlebars/node_modules/source-map/node_modules/amdefine/amdefine.js")
+},{"_process":7,"path":6}],38:[function(require,module,exports){
+(function (process){
+  /* globals require, module */
+
+  'use strict';
+
+  /**
+   * Module dependencies.
+   */
+
+  var pathtoRegexp = require('path-to-regexp');
+
+  /**
+   * Module exports.
+   */
+
+  module.exports = page;
+
+  /**
+   * Detect click event
+   */
+  var clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
+
+  /**
+   * To work properly with the URL
+   * history.location generated polyfill in https://github.com/devote/HTML5-History-API
+   */
+
+  var location = ('undefined' !== typeof window) && (window.history.location || window.location);
+
+  /**
+   * Perform initial dispatch.
+   */
+
+  var dispatch = true;
+
+
+  /**
+   * Decode URL components (query string, pathname, hash).
+   * Accommodates both regular percent encoding and x-www-form-urlencoded format.
+   */
+  var decodeURLComponents = true;
+
+  /**
+   * Base path.
+   */
+
+  var base = '';
+
+  /**
+   * Running flag.
+   */
+
+  var running;
+
+  /**
+   * HashBang option
+   */
+
+  var hashbang = false;
+
+  /**
+   * Previous context, for capturing
+   * page exit events.
+   */
+
+  var prevContext;
+
+  /**
+   * Register `path` with callback `fn()`,
+   * or route `path`, or redirection,
+   * or `page.start()`.
+   *
+   *   page(fn);
+   *   page('*', fn);
+   *   page('/user/:id', load, user);
+   *   page('/user/' + user.id, { some: 'thing' });
+   *   page('/user/' + user.id);
+   *   page('/from', '/to')
+   *   page();
+   *
+   * @param {string|!Function|!Object} path
+   * @param {Function=} fn
+   * @api public
+   */
+
+  function page(path, fn) {
+    // <callback>
+    if ('function' === typeof path) {
+      return page('*', path);
+    }
+
+    // route <path> to <callback ...>
+    if ('function' === typeof fn) {
+      var route = new Route(/** @type {string} */ (path));
+      for (var i = 1; i < arguments.length; ++i) {
+        page.callbacks.push(route.middleware(arguments[i]));
+      }
+      // show <path> with [state]
+    } else if ('string' === typeof path) {
+      page['string' === typeof fn ? 'redirect' : 'show'](path, fn);
+      // start [options]
+    } else {
+      page.start(path);
+    }
+  }
+
+  /**
+   * Callback functions.
+   */
+
+  page.callbacks = [];
+  page.exits = [];
+
+  /**
+   * Current path being processed
+   * @type {string}
+   */
+  page.current = '';
+
+  /**
+   * Number of pages navigated to.
+   * @type {number}
+   *
+   *     page.len == 0;
+   *     page('/login');
+   *     page.len == 1;
+   */
+
+  page.len = 0;
+
+  /**
+   * Get or set basepath to `path`.
+   *
+   * @param {string} path
+   * @api public
+   */
+
+  page.base = function(path) {
+    if (0 === arguments.length) return base;
+    base = path;
+  };
+
+  /**
+   * Bind with the given `options`.
+   *
+   * Options:
+   *
+   *    - `click` bind to click events [true]
+   *    - `popstate` bind to popstate [true]
+   *    - `dispatch` perform initial dispatch [true]
+   *
+   * @param {Object} options
+   * @api public
+   */
+
+  page.start = function(options) {
+    options = options || {};
+    if (running) return;
+    running = true;
+    if (false === options.dispatch) dispatch = false;
+    if (false === options.decodeURLComponents) decodeURLComponents = false;
+    if (false !== options.popstate) window.addEventListener('popstate', onpopstate, false);
+    if (false !== options.click) {
+      document.addEventListener(clickEvent, onclick, false);
+    }
+    if (true === options.hashbang) hashbang = true;
+    if (!dispatch) return;
+    var url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+    page.replace(url, null, true, dispatch);
+  };
+
+  /**
+   * Unbind click and popstate event handlers.
+   *
+   * @api public
+   */
+
+  page.stop = function() {
+    if (!running) return;
+    page.current = '';
+    page.len = 0;
+    running = false;
+    document.removeEventListener(clickEvent, onclick, false);
+    window.removeEventListener('popstate', onpopstate, false);
+  };
+
+  /**
+   * Show `path` with optional `state` object.
+   *
+   * @param {string} path
+   * @param {Object=} state
+   * @param {boolean=} dispatch
+   * @param {boolean=} push
+   * @return {!Context}
+   * @api public
+   */
+
+  page.show = function(path, state, dispatch, push) {
+    var ctx = new Context(path, state);
+    page.current = ctx.path;
+    if (false !== dispatch) page.dispatch(ctx);
+    if (false !== ctx.handled && false !== push) ctx.pushState();
+    return ctx;
+  };
+
+  /**
+   * Goes back in the history
+   * Back should always let the current route push state and then go back.
+   *
+   * @param {string} path - fallback path to go back if no more history exists, if undefined defaults to page.base
+   * @param {Object=} state
+   * @api public
+   */
+
+  page.back = function(path, state) {
+    if (page.len > 0) {
+      // this may need more testing to see if all browsers
+      // wait for the next tick to go back in history
+      history.back();
+      page.len--;
+    } else if (path) {
+      setTimeout(function() {
+        page.show(path, state);
+      });
+    }else{
+      setTimeout(function() {
+        page.show(base, state);
+      });
+    }
+  };
+
+
+  /**
+   * Register route to redirect from one path to other
+   * or just redirect to another route
+   *
+   * @param {string} from - if param 'to' is undefined redirects to 'from'
+   * @param {string=} to
+   * @api public
+   */
+  page.redirect = function(from, to) {
+    // Define route from a path to another
+    if ('string' === typeof from && 'string' === typeof to) {
+      page(from, function(e) {
+        setTimeout(function() {
+          page.replace(/** @type {!string} */ (to));
+        }, 0);
+      });
+    }
+
+    // Wait for the push state and replace it with another
+    if ('string' === typeof from && 'undefined' === typeof to) {
+      setTimeout(function() {
+        page.replace(from);
+      }, 0);
+    }
+  };
+
+  /**
+   * Replace `path` with optional `state` object.
+   *
+   * @param {string} path
+   * @param {Object=} state
+   * @param {boolean=} init
+   * @param {boolean=} dispatch
+   * @return {!Context}
+   * @api public
+   */
+
+
+  page.replace = function(path, state, init, dispatch) {
+    var ctx = new Context(path, state);
+    page.current = ctx.path;
+    ctx.init = init;
+    ctx.save(); // save before dispatching, which may redirect
+    if (false !== dispatch) page.dispatch(ctx);
+    return ctx;
+  };
+
+  /**
+   * Dispatch the given `ctx`.
+   *
+   * @param {Context} ctx
+   * @api private
+   */
+  page.dispatch = function(ctx) {
+    var prev = prevContext,
+      i = 0,
+      j = 0;
+
+    prevContext = ctx;
+
+    function nextExit() {
+      var fn = page.exits[j++];
+      if (!fn) return nextEnter();
+      fn(prev, nextExit);
+    }
+
+    function nextEnter() {
+      var fn = page.callbacks[i++];
+
+      if (ctx.path !== page.current) {
+        ctx.handled = false;
+        return;
+      }
+      if (!fn) return unhandled(ctx);
+      fn(ctx, nextEnter);
+    }
+
+    if (prev) {
+      nextExit();
+    } else {
+      nextEnter();
+    }
+  };
+
+  /**
+   * Unhandled `ctx`. When it's not the initial
+   * popstate then redirect. If you wish to handle
+   * 404s on your own use `page('*', callback)`.
+   *
+   * @param {Context} ctx
+   * @api private
+   */
+  function unhandled(ctx) {
+    if (ctx.handled) return;
+    var current;
+
+    if (hashbang) {
+      current = base + location.hash.replace('#!', '');
+    } else {
+      current = location.pathname + location.search;
+    }
+
+    if (current === ctx.canonicalPath) return;
+    page.stop();
+    ctx.handled = false;
+    location.href = ctx.canonicalPath;
+  }
+
+  /**
+   * Register an exit route on `path` with
+   * callback `fn()`, which will be called
+   * on the previous context when a new
+   * page is visited.
+   */
+  page.exit = function(path, fn) {
+    if (typeof path === 'function') {
+      return page.exit('*', path);
+    }
+
+    var route = new Route(path);
+    for (var i = 1; i < arguments.length; ++i) {
+      page.exits.push(route.middleware(arguments[i]));
+    }
+  };
+
+  /**
+   * Remove URL encoding from the given `str`.
+   * Accommodates whitespace in both x-www-form-urlencoded
+   * and regular percent-encoded form.
+   *
+   * @param {string} val - URL component to decode
+   */
+  function decodeURLEncodedURIComponent(val) {
+    if (typeof val !== 'string') { return val; }
+    return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
+  }
+
+  /**
+   * Initialize a new "request" `Context`
+   * with the given `path` and optional initial `state`.
+   *
+   * @constructor
+   * @param {string} path
+   * @param {Object=} state
+   * @api public
+   */
+
+  function Context(path, state) {
+    if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
+    var i = path.indexOf('?');
+
+    this.canonicalPath = path;
+    this.path = path.replace(base, '') || '/';
+    if (hashbang) this.path = this.path.replace('#!', '') || '/';
+
+    this.title = document.title;
+    this.state = state || {};
+    this.state.path = path;
+    this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
+    this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
+    this.params = {};
+
+    // fragment
+    this.hash = '';
+    if (!hashbang) {
+      if (!~this.path.indexOf('#')) return;
+      var parts = this.path.split('#');
+      this.path = parts[0];
+      this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
+      this.querystring = this.querystring.split('#')[0];
+    }
+  }
+
+  /**
+   * Expose `Context`.
+   */
+
+  page.Context = Context;
+
+  /**
+   * Push state.
+   *
+   * @api private
+   */
+
+  Context.prototype.pushState = function() {
+    page.len++;
+    history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  };
+
+  /**
+   * Save the context state.
+   *
+   * @api public
+   */
+
+  Context.prototype.save = function() {
+    history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  };
+
+  /**
+   * Initialize `Route` with the given HTTP `path`,
+   * and an array of `callbacks` and `options`.
+   *
+   * Options:
+   *
+   *   - `sensitive`    enable case-sensitive routes
+   *   - `strict`       enable strict matching for trailing slashes
+   *
+   * @constructor
+   * @param {string} path
+   * @param {Object=} options
+   * @api private
+   */
+
+  function Route(path, options) {
+    options = options || {};
+    this.path = (path === '*') ? '(.*)' : path;
+    this.method = 'GET';
+    this.regexp = pathtoRegexp(this.path,
+      this.keys = [],
+      options);
+  }
+
+  /**
+   * Expose `Route`.
+   */
+
+  page.Route = Route;
+
+  /**
+   * Return route middleware with
+   * the given callback `fn()`.
+   *
+   * @param {Function} fn
+   * @return {Function}
+   * @api public
+   */
+
+  Route.prototype.middleware = function(fn) {
+    var self = this;
+    return function(ctx, next) {
+      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
+      next();
+    };
+  };
+
+  /**
+   * Check if this route matches `path`, if so
+   * populate `params`.
+   *
+   * @param {string} path
+   * @param {Object} params
+   * @return {boolean}
+   * @api private
+   */
+
+  Route.prototype.match = function(path, params) {
+    var keys = this.keys,
+      qsIndex = path.indexOf('?'),
+      pathname = ~qsIndex ? path.slice(0, qsIndex) : path,
+      m = this.regexp.exec(decodeURIComponent(pathname));
+
+    if (!m) return false;
+
+    for (var i = 1, len = m.length; i < len; ++i) {
+      var key = keys[i - 1];
+      var val = decodeURLEncodedURIComponent(m[i]);
+      if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
+        params[key.name] = val;
+      }
+    }
+
+    return true;
+  };
+
+
+  /**
+   * Handle "populate" events.
+   */
+
+  var onpopstate = (function () {
+    var loaded = false;
+    if ('undefined' === typeof window) {
+      return;
+    }
+    if (document.readyState === 'complete') {
+      loaded = true;
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          loaded = true;
+        }, 0);
+      });
+    }
+    return function onpopstate(e) {
+      if (!loaded) return;
+      if (e.state) {
+        var path = e.state.path;
+        page.replace(path, e.state);
+      } else {
+        page.show(location.pathname + location.hash, undefined, undefined, false);
+      }
+    };
+  })();
+  /**
+   * Handle "click" events.
+   */
+
+  function onclick(e) {
+
+    if (1 !== which(e)) return;
+
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (e.defaultPrevented) return;
+
+
+
+    // ensure link
+    // use shadow dom when available
+    var el = e.path ? e.path[0] : e.target;
+    while (el && 'A' !== el.nodeName) el = el.parentNode;
+    if (!el || 'A' !== el.nodeName) return;
+
+
+
+    // Ignore if tag has
+    // 1. "download" attribute
+    // 2. rel="external" attribute
+    if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
+
+    // ensure non-hash for the same path
+    var link = el.getAttribute('href');
+    if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
+
+
+
+    // Check for mailto: in the href
+    if (link && link.indexOf('mailto:') > -1) return;
+
+    // check target
+    if (el.target) return;
+
+    // x-origin
+    if (!sameOrigin(el.href)) return;
+
+
+
+    // rebuild path
+    var path = el.pathname + el.search + (el.hash || '');
+
+    // strip leading "/[drive letter]:" on NW.js on Windows
+    if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
+      path = path.replace(/^\/[a-zA-Z]:\//, '/');
+    }
+
+    // same page
+    var orig = path;
+
+    if (path.indexOf(base) === 0) {
+      path = path.substr(base.length);
+    }
+
+    if (hashbang) path = path.replace('#!', '');
+
+    if (base && orig === path) return;
+
+    e.preventDefault();
+    page.show(orig);
+  }
+
+  /**
+   * Event button.
+   */
+
+  function which(e) {
+    e = e || window.event;
+    return null === e.which ? e.button : e.which;
+  }
+
+  /**
+   * Check if `href` is the same origin.
+   */
+
+  function sameOrigin(href) {
+    var origin = location.protocol + '//' + location.hostname;
+    if (location.port) origin += ':' + location.port;
+    return (href && (0 === href.indexOf(origin)));
+  }
+
+  page.sameOrigin = sameOrigin;
+
+}).call(this,require('_process'))
+},{"_process":7,"path-to-regexp":39}],39:[function(require,module,exports){
+var isarray = require('isarray')
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^()])+)\\))?|\\(((?:\\\\.|[^()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {String} str
+ * @return {Array}
+ */
+function parse (str) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var suffix = res[6]
+    var asterisk = res[7]
+
+    var repeat = suffix === '+' || suffix === '*'
+    var optional = suffix === '?' || suffix === '*'
+    var delimiter = prefix || '/'
+    var pattern = capture || group || (asterisk ? '.*' : '[^' + delimiter + ']+?')
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      pattern: escapeGroup(pattern)
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {String}   str
+ * @return {Function}
+ */
+function compile (str) {
+  return tokensToFunction(parse(str))
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^' + tokens[i].pattern + '$')
+    }
+  }
+
+  return function (obj) {
+    var path = ''
+    var data = obj || {}
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received "' + value + '"')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encodeURIComponent(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = encodeURIComponent(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {String} str
+ * @return {String}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {String} group
+ * @return {String}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {RegExp} re
+ * @param  {Array}  keys
+ * @return {RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {String}
+ */
+function flags (options) {
+  return options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {RegExp} path
+ * @param  {Array}  keys
+ * @return {RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {Array}  path
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {String} path
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  var tokens = parse(path)
+  var re = tokensToRegExp(tokens, options)
+
+  // Attach keys back to the regexp.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] !== 'string') {
+      keys.push(tokens[i])
+    }
+  }
+
+  return attachKeys(re, keys)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {Array}  tokens
+ * @param  {Array}  keys
+ * @param  {Object} options
+ * @return {RegExp}
+ */
+function tokensToRegExp (tokens, options) {
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+  var lastToken = tokens[tokens.length - 1]
+  var endsWithSlash = typeof lastToken === 'string' && /\/$/.test(lastToken)
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = token.pattern
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (prefix) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithSlash ? route.slice(0, -2) : route) + '(?:\\/(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithSlash ? '' : '(?=\\/|$)'
+  }
+
+  return new RegExp('^' + route, flags(options))
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(String|RegExp|Array)} path
+ * @param  {Array}                 [keys]
+ * @param  {Object}                [options]
+ * @return {RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  keys = keys || []
+
+  if (!isarray(keys)) {
+    options = keys
+    keys = []
+  } else if (!options) {
+    options = {}
+  }
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, keys, options)
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(path, keys, options)
+  }
+
+  return stringToRegexp(path, keys, options)
+}
+
+},{"isarray":40}],40:[function(require,module,exports){
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+},{}]},{},[1]);
