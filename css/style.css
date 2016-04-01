@@ -612,14 +612,20 @@ h3.heading-progress span{
     color:#fff;
 }
 #hightlight-sec-2{
-    background:url('../img/highlight-bg2.jpg')no-repeat center scroll;
-
+    /*background:url('../img/highlight-bg2.jpg')no-repeat center scroll;*/
+    text-align: center;
+    padding: 0px;
+    margin-top: 89px;
+    margin-bottom: 25px;
 }
 #hightlight-sec-2 h1{
     margin-top: 100px;
     color:#fff;
     text-transform: uppercase;
     font-size: 40px;
+}
+#hightlight-sec-2 video{
+    margin: 5px auto 0;
 }
 #home-contact{
     background-color: #f7f7f7;
