@@ -221,12 +221,12 @@
 
     requestAnimationFrame(function firstFrameUpdates () {
       addMostRecentPosts();
-      fixFooter();
+      // fixFooter();
       updateCopyright();
       unobfuscateEmails();
     });
 
-    $(window).on('resize', fixFooter);
+    // $(window).on('resize', fixFooter);
   } );
 })();
 },{"./post.js":2,"./posts.js":3,"./templates.js":4,"handlebars":26,"page":38}],2:[function(require,module,exports){

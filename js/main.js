@@ -220,11 +220,11 @@
 
     requestAnimationFrame(function firstFrameUpdates () {
       addMostRecentPosts();
-      fixFooter();
+      // fixFooter();
       updateCopyright();
       unobfuscateEmails();
     });
 
-    $(window).on('resize', fixFooter);
+    // $(window).on('resize', fixFooter);
   } );
 })();

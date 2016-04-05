@@ -23,7 +23,6 @@ body{
     -webkit-text-size-adjust: 100%;	
     cursor:default;
     font-size: 14px;
-    overflow-y: scroll; 
 }
 
 h1,
@@ -85,7 +84,7 @@ p{
 }
 
 #wrapper {
-    position: relative;
+    /*position: relative;*/
     /*min-height: 100%;*/
 }
 
@@ -589,7 +588,7 @@ h3.heading-progress span{
 #footer-defoult{
     background: #363839;
     color:#8C8989;
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
     right: 0;
     left: 0;
@@ -616,8 +615,13 @@ h3.heading-progress span{
     text-align: center;
     overflow: hidden;
     padding: 0px;
-    margin-top: 89px;
+    margin-top: 49px;
     margin-bottom: 25px;
+}
+@media (min-width: 768px){
+    #hightlight-sec-2{
+        margin-top: 93px;
+    }
 }
 #hightlight-sec-2 h1{
     margin-top: 100px;
@@ -627,7 +631,7 @@ h3.heading-progress span{
 }
 #hightlight-sec-2 video{
     background:url('../img/banner-poster.png')no-repeat center scroll;
-    margin: 5px auto 0;
+    margin: 0;
 }
 .container img{
     max-width: 100%;
