@@ -16,6 +16,9 @@ html,body {
     margin: 0;
     padding: 0;
 }
+html {
+    overflow-y: scroll;
+}
 body{ 
     font-family: 'Open Sans', sans-serif !important;
     background: #fff;
